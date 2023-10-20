@@ -1,5 +1,5 @@
 type file
-id WebSharper.React.FluentUi.Components
+id WebSharper.FluentUI.React.Components
 authors
     IntelliFactory
 owners
