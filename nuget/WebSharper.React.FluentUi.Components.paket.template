@@ -1,0 +1,20 @@
+type file
+id WebSharper.React.FluentUi.Components
+authors
+    IntelliFactory
+owners
+    IntelliFactory
+repositoryType git
+repositoryUrl https://github.com/dotnet-websharper/fluentui-react-components/
+licenseUrl https://github.com/dotnet-websharper/fluentui-react-components/blob/master/LICENSE.md
+iconUrl https://github.com/dotnet-websharper/core/raw/websharper50/tools/WebSharper.png
+projectUrl https://github.com/dotnet-websharper/fluentui-react-components
+description
+    WebSharper React bindings for @fluentui/react-components  9.35.0+
+tags
+    Web JavaScript F# C#
+files
+    ../WebSharper.React.FluentUi.Components/bin/Release/netstandard2.0/WebSharper.React.FluentUi.Components.dll ==> lib/netstandard2.0
+    ../WebSharper.React.FluentUi.Components/bin/Release/netstandard2.0/WebSharper.React.FluentUi.Components.xml ==> lib/netstandard2.0
+dependencies
+        WebSharper ~> LOCKEDVERSION:[3]
