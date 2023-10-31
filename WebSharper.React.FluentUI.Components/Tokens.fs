@@ -1,7 +1,7 @@
 namespace WebSharper.FluentUI.React
 open WebSharper.JavaScript
 open WebSharper
-[<JavaScript; Import("tokens","@fluentui/react-components")>]
+[<JavaScript>]
 type Tokens = private {
     colorNeutralForeground1:string
     colorNeutralForeground1Hover:string
