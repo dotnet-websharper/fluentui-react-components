@@ -1,5 +1,7 @@
 namespace WebSharper.FluentUI.React
 open WebSharper.JavaScript
+open WebSharper
+[<JavaScript>]
 module Tokens =
     let colorNeutralForeground1:string = JS.Import("tokens", "@fluentui/react-components")
     let colorNeutralForeground1Hover:string = JS.Import("tokens", "@fluentui/react-components")
