@@ -1,432 +1,433 @@
 namespace WebSharper.FluentUI.React
 open WebSharper.JavaScript
 open WebSharper
-[<JavaScript>]
-module Tokens =
-    let colorNeutralForeground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground1Hover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground1Pressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground1Selected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground2Hover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground2Pressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground2Selected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground2BrandHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground2BrandPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground2BrandSelected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground3Hover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground3Pressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground3Selected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground3BrandHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground3BrandPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground3BrandSelected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground4:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForegroundDisabled:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForegroundLink:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForegroundLinkHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForegroundLinkPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForegroundLinkSelected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground2Link:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground2LinkHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground2LinkPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground2LinkSelected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorCompoundBrandForeground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorCompoundBrandForeground1Hover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorCompoundBrandForeground1Pressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForegroundOnBrand:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForegroundInverted:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForegroundInvertedHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForegroundInvertedPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForegroundInvertedSelected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForegroundInverted2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForegroundStaticInverted:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForegroundInvertedLink:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForegroundInvertedLinkHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForegroundInvertedLinkPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForegroundInvertedLinkSelected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForegroundInvertedDisabled:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForeground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForeground2Hover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForeground2Pressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralForeground1Static:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForegroundInverted:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForegroundInvertedHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForegroundInvertedPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForegroundOnLight:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForegroundOnLightHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForegroundOnLightPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandForegroundOnLightSelected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground1Hover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground1Pressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground1Selected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground2Hover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground2Pressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground2Selected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground3Hover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground3Pressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground3Selected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground4:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground4Hover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground4Pressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground4Selected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground5:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground5Hover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground5Pressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground5Selected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackground6:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackgroundInverted:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackgroundStatic:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackgroundAlpha:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackgroundAlpha2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorSubtleBackground:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorSubtleBackgroundHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorSubtleBackgroundPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorSubtleBackgroundSelected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorSubtleBackgroundLightAlphaHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorSubtleBackgroundLightAlphaPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorSubtleBackgroundLightAlphaSelected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorSubtleBackgroundInverted:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorSubtleBackgroundInvertedHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorSubtleBackgroundInvertedPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorSubtleBackgroundInvertedSelected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorTransparentBackground:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorTransparentBackgroundHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorTransparentBackgroundPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorTransparentBackgroundSelected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackgroundDisabled:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralBackgroundInvertedDisabled:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStencil1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStencil2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStencil1Alpha:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStencil2Alpha:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBackgroundOverlay:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorScrollbarOverlay:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandBackground:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandBackgroundHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandBackgroundPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandBackgroundSelected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorCompoundBrandBackground:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorCompoundBrandBackgroundHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorCompoundBrandBackgroundPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandBackgroundStatic:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandBackground2Hover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandBackground2Pressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandBackgroundInverted:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandBackgroundInvertedHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandBackgroundInvertedPressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandBackgroundInvertedSelected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStrokeAccessible:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStrokeAccessibleHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStrokeAccessiblePressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStrokeAccessibleSelected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStroke1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStroke1Hover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStroke1Pressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStroke1Selected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStroke2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStroke3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStrokeSubtle:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStrokeOnBrand:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStrokeOnBrand2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStrokeOnBrand2Hover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStrokeOnBrand2Pressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStrokeOnBrand2Selected:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandStroke1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandStroke2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandStroke2Hover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandStroke2Pressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandStroke2Contrast:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorCompoundBrandStroke:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorCompoundBrandStrokeHover:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorCompoundBrandStrokePressed:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStrokeDisabled:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStrokeInvertedDisabled:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorTransparentStroke:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorTransparentStrokeInteractive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorTransparentStrokeDisabled:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStrokeAlpha:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralStrokeAlpha2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStrokeFocus1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStrokeFocus2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralShadowAmbient:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralShadowKey:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralShadowAmbientLighter:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralShadowKeyLighter:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralShadowAmbientDarker:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorNeutralShadowKeyDarker:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandShadowAmbient:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorBrandShadowKey:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteRedBackground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteRedBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteRedBackground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteRedBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteRedBorder1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteRedBorder2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteRedForeground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteRedForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteRedForeground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteRedForegroundInverted:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGreenBackground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGreenBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGreenBackground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGreenBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGreenBorder1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGreenBorder2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGreenForeground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGreenForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGreenForeground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGreenForegroundInverted:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkOrangeBackground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkOrangeBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkOrangeBackground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkOrangeBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkOrangeBorder1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkOrangeBorder2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkOrangeForeground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkOrangeForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkOrangeForeground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteYellowBackground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteYellowBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteYellowBackground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteYellowBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteYellowBorder1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteYellowBorder2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteYellowForeground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteYellowForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteYellowForeground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteYellowForegroundInverted:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBerryBackground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBerryBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBerryBackground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBerryBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBerryBorder1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBerryBorder2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBerryForeground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBerryForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBerryForeground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMarigoldBackground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMarigoldBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMarigoldBackground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMarigoldBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMarigoldBorder1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMarigoldBorder2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMarigoldForeground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMarigoldForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMarigoldForeground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLightGreenBackground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLightGreenBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLightGreenBackground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLightGreenBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLightGreenBorder1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLightGreenBorder2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLightGreenForeground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLightGreenForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLightGreenForeground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteAnchorBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteAnchorBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteAnchorForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBeigeBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBeigeBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBeigeForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBlueBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBlueBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBlueForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBrassBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBrassBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBrassForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBrownBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBrownBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteBrownForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteCornflowerBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteCornflowerBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteCornflowerForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteCranberryBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteCranberryBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteCranberryForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkGreenBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkGreenBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkGreenForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkRedBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkRedBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteDarkRedForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteForestBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteForestBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteForestForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGoldBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGoldBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGoldForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGrapeBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGrapeBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteGrapeForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLavenderBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLavenderBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLavenderForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLightTealBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLightTealBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLightTealForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLilacBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLilacBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteLilacForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMagentaBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMagentaBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMagentaForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMinkBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMinkBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteMinkForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteNavyBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteNavyBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteNavyForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePeachBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePeachBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePeachForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePinkBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePinkBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePinkForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePlatinumBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePlatinumBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePlatinumForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePlumBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePlumBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePlumForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePumpkinBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePumpkinBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePumpkinForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePurpleBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePurpleBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPalettePurpleForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteRoyalBlueBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteRoyalBlueBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteRoyalBlueForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteSeafoamBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteSeafoamBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteSeafoamForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteSteelBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteSteelBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteSteelForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteTealBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteTealBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorPaletteTealForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusSuccessBackground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusSuccessBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusSuccessBackground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusSuccessForeground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusSuccessForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusSuccessForeground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusSuccessForegroundInverted:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusSuccessBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusSuccessBorder1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusSuccessBorder2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusWarningBackground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusWarningBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusWarningBackground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusWarningForeground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusWarningForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusWarningForeground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusWarningForegroundInverted:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusWarningBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusWarningBorder1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusWarningBorder2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusDangerBackground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusDangerBackground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusDangerBackground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusDangerForeground1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusDangerForeground2:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusDangerForeground3:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusDangerForegroundInverted:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusDangerBorderActive:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusDangerBorder1:string = JS.Import("tokens", "@fluentui/react-components")
-    let colorStatusDangerBorder2:string = JS.Import("tokens", "@fluentui/react-components")
-    let borderRadiusNone:string = JS.Import("tokens", "@fluentui/react-components")
-    let borderRadiusSmall:string = JS.Import("tokens", "@fluentui/react-components")
-    let borderRadiusMedium:string = JS.Import("tokens", "@fluentui/react-components")
-    let borderRadiusLarge:string = JS.Import("tokens", "@fluentui/react-components")
-    let borderRadiusXLarge:string = JS.Import("tokens", "@fluentui/react-components")
-    let borderRadiusCircular:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontFamilyBase:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontFamilyMonospace:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontFamilyNumeric:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontSizeBase100:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontSizeBase200:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontSizeBase300:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontSizeBase400:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontSizeBase500:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontSizeBase600:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontSizeHero700:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontSizeHero800:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontSizeHero900:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontSizeHero1000:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontWeightRegular:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontWeightMedium:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontWeightSemibold:string = JS.Import("tokens", "@fluentui/react-components")
-    let fontWeightBold:string = JS.Import("tokens", "@fluentui/react-components")
-    let lineHeightBase100:string = JS.Import("tokens", "@fluentui/react-components")
-    let lineHeightBase200:string = JS.Import("tokens", "@fluentui/react-components")
-    let lineHeightBase300:string = JS.Import("tokens", "@fluentui/react-components")
-    let lineHeightBase400:string = JS.Import("tokens", "@fluentui/react-components")
-    let lineHeightBase500:string = JS.Import("tokens", "@fluentui/react-components")
-    let lineHeightBase600:string = JS.Import("tokens", "@fluentui/react-components")
-    let lineHeightHero700:string = JS.Import("tokens", "@fluentui/react-components")
-    let lineHeightHero800:string = JS.Import("tokens", "@fluentui/react-components")
-    let lineHeightHero900:string = JS.Import("tokens", "@fluentui/react-components")
-    let lineHeightHero1000:string = JS.Import("tokens", "@fluentui/react-components")
-    let shadow2:string = JS.Import("tokens", "@fluentui/react-components")
-    let shadow4:string = JS.Import("tokens", "@fluentui/react-components")
-    let shadow8:string = JS.Import("tokens", "@fluentui/react-components")
-    let shadow16:string = JS.Import("tokens", "@fluentui/react-components")
-    let shadow28:string = JS.Import("tokens", "@fluentui/react-components")
-    let shadow64:string = JS.Import("tokens", "@fluentui/react-components")
-    let shadow2Brand:string = JS.Import("tokens", "@fluentui/react-components")
-    let shadow4Brand:string = JS.Import("tokens", "@fluentui/react-components")
-    let shadow8Brand:string = JS.Import("tokens", "@fluentui/react-components")
-    let shadow16Brand:string = JS.Import("tokens", "@fluentui/react-components")
-    let shadow28Brand:string = JS.Import("tokens", "@fluentui/react-components")
-    let shadow64Brand:string = JS.Import("tokens", "@fluentui/react-components")
-    let strokeWidthThin:string = JS.Import("tokens", "@fluentui/react-components")
-    let strokeWidthThick:string = JS.Import("tokens", "@fluentui/react-components")
-    let strokeWidthThicker:string = JS.Import("tokens", "@fluentui/react-components")
-    let strokeWidthThickest:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingHorizontalNone:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingHorizontalXXS:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingHorizontalXS:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingHorizontalSNudge:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingHorizontalS:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingHorizontalMNudge:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingHorizontalM:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingHorizontalL:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingHorizontalXL:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingHorizontalXXL:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingHorizontalXXXL:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingVerticalNone:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingVerticalXXS:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingVerticalXS:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingVerticalSNudge:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingVerticalS:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingVerticalMNudge:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingVerticalM:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingVerticalL:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingVerticalXL:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingVerticalXXL:string = JS.Import("tokens", "@fluentui/react-components")
-    let spacingVerticalXXXL:string = JS.Import("tokens", "@fluentui/react-components")
-    let durationUltraFast:string = JS.Import("tokens", "@fluentui/react-components")
-    let durationFaster:string = JS.Import("tokens", "@fluentui/react-components")
-    let durationFast:string = JS.Import("tokens", "@fluentui/react-components")
-    let durationNormal:string = JS.Import("tokens", "@fluentui/react-components")
-    let durationGentle:string = JS.Import("tokens", "@fluentui/react-components")
-    let durationSlow:string = JS.Import("tokens", "@fluentui/react-components")
-    let durationSlower:string = JS.Import("tokens", "@fluentui/react-components")
-    let durationUltraSlow:string = JS.Import("tokens", "@fluentui/react-components")
-    let curveAccelerateMax:string = JS.Import("tokens", "@fluentui/react-components")
-    let curveAccelerateMid:string = JS.Import("tokens", "@fluentui/react-components")
-    let curveAccelerateMin:string = JS.Import("tokens", "@fluentui/react-components")
-    let curveDecelerateMax:string = JS.Import("tokens", "@fluentui/react-components")
-    let curveDecelerateMid:string = JS.Import("tokens", "@fluentui/react-components")
-    let curveDecelerateMin:string = JS.Import("tokens", "@fluentui/react-components")
-    let curveEasyEaseMax:string = JS.Import("tokens", "@fluentui/react-components")
-    let curveEasyEase:string = JS.Import("tokens", "@fluentui/react-components")
-    let curveLinear:string = JS.Import("tokens", "@fluentui/react-components")
+[<JavaScript; Import("tokens","@fluentui/react-components")>]
+type Tokens = private {
+    colorNeutralForeground1:string
+    colorNeutralForeground1Hover:string
+    colorNeutralForeground1Pressed:string
+    colorNeutralForeground1Selected:string
+    colorNeutralForeground2:string
+    colorNeutralForeground2Hover:string
+    colorNeutralForeground2Pressed:string
+    colorNeutralForeground2Selected:string
+    colorNeutralForeground2BrandHover:string
+    colorNeutralForeground2BrandPressed:string
+    colorNeutralForeground2BrandSelected:string
+    colorNeutralForeground3:string
+    colorNeutralForeground3Hover:string
+    colorNeutralForeground3Pressed:string
+    colorNeutralForeground3Selected:string
+    colorNeutralForeground3BrandHover:string
+    colorNeutralForeground3BrandPressed:string
+    colorNeutralForeground3BrandSelected:string
+    colorNeutralForeground4:string
+    colorNeutralForegroundDisabled:string
+    colorBrandForegroundLink:string
+    colorBrandForegroundLinkHover:string
+    colorBrandForegroundLinkPressed:string
+    colorBrandForegroundLinkSelected:string
+    colorNeutralForeground2Link:string
+    colorNeutralForeground2LinkHover:string
+    colorNeutralForeground2LinkPressed:string
+    colorNeutralForeground2LinkSelected:string
+    colorCompoundBrandForeground1:string
+    colorCompoundBrandForeground1Hover:string
+    colorCompoundBrandForeground1Pressed:string
+    colorNeutralForegroundOnBrand:string
+    colorNeutralForegroundInverted:string
+    colorNeutralForegroundInvertedHover:string
+    colorNeutralForegroundInvertedPressed:string
+    colorNeutralForegroundInvertedSelected:string
+    colorNeutralForegroundInverted2:string
+    colorNeutralForegroundStaticInverted:string
+    colorNeutralForegroundInvertedLink:string
+    colorNeutralForegroundInvertedLinkHover:string
+    colorNeutralForegroundInvertedLinkPressed:string
+    colorNeutralForegroundInvertedLinkSelected:string
+    colorNeutralForegroundInvertedDisabled:string
+    colorBrandForeground1:string
+    colorBrandForeground2:string
+    colorBrandForeground2Hover:string
+    colorBrandForeground2Pressed:string
+    colorNeutralForeground1Static:string
+    colorBrandForegroundInverted:string
+    colorBrandForegroundInvertedHover:string
+    colorBrandForegroundInvertedPressed:string
+    colorBrandForegroundOnLight:string
+    colorBrandForegroundOnLightHover:string
+    colorBrandForegroundOnLightPressed:string
+    colorBrandForegroundOnLightSelected:string
+    colorNeutralBackground1:string
+    colorNeutralBackground1Hover:string
+    colorNeutralBackground1Pressed:string
+    colorNeutralBackground1Selected:string
+    colorNeutralBackground2:string
+    colorNeutralBackground2Hover:string
+    colorNeutralBackground2Pressed:string
+    colorNeutralBackground2Selected:string
+    colorNeutralBackground3:string
+    colorNeutralBackground3Hover:string
+    colorNeutralBackground3Pressed:string
+    colorNeutralBackground3Selected:string
+    colorNeutralBackground4:string
+    colorNeutralBackground4Hover:string
+    colorNeutralBackground4Pressed:string
+    colorNeutralBackground4Selected:string
+    colorNeutralBackground5:string
+    colorNeutralBackground5Hover:string
+    colorNeutralBackground5Pressed:string
+    colorNeutralBackground5Selected:string
+    colorNeutralBackground6:string
+    colorNeutralBackgroundInverted:string
+    colorNeutralBackgroundStatic:string
+    colorNeutralBackgroundAlpha:string
+    colorNeutralBackgroundAlpha2:string
+    colorSubtleBackground:string
+    colorSubtleBackgroundHover:string
+    colorSubtleBackgroundPressed:string
+    colorSubtleBackgroundSelected:string
+    colorSubtleBackgroundLightAlphaHover:string
+    colorSubtleBackgroundLightAlphaPressed:string
+    colorSubtleBackgroundLightAlphaSelected:string
+    colorSubtleBackgroundInverted:string
+    colorSubtleBackgroundInvertedHover:string
+    colorSubtleBackgroundInvertedPressed:string
+    colorSubtleBackgroundInvertedSelected:string
+    colorTransparentBackground:string
+    colorTransparentBackgroundHover:string
+    colorTransparentBackgroundPressed:string
+    colorTransparentBackgroundSelected:string
+    colorNeutralBackgroundDisabled:string
+    colorNeutralBackgroundInvertedDisabled:string
+    colorNeutralStencil1:string
+    colorNeutralStencil2:string
+    colorNeutralStencil1Alpha:string
+    colorNeutralStencil2Alpha:string
+    colorBackgroundOverlay:string
+    colorScrollbarOverlay:string
+    colorBrandBackground:string
+    colorBrandBackgroundHover:string
+    colorBrandBackgroundPressed:string
+    colorBrandBackgroundSelected:string
+    colorCompoundBrandBackground:string
+    colorCompoundBrandBackgroundHover:string
+    colorCompoundBrandBackgroundPressed:string
+    colorBrandBackgroundStatic:string
+    colorBrandBackground2:string
+    colorBrandBackground2Hover:string
+    colorBrandBackground2Pressed:string
+    colorBrandBackgroundInverted:string
+    colorBrandBackgroundInvertedHover:string
+    colorBrandBackgroundInvertedPressed:string
+    colorBrandBackgroundInvertedSelected:string
+    colorNeutralStrokeAccessible:string
+    colorNeutralStrokeAccessibleHover:string
+    colorNeutralStrokeAccessiblePressed:string
+    colorNeutralStrokeAccessibleSelected:string
+    colorNeutralStroke1:string
+    colorNeutralStroke1Hover:string
+    colorNeutralStroke1Pressed:string
+    colorNeutralStroke1Selected:string
+    colorNeutralStroke2:string
+    colorNeutralStroke3:string
+    colorNeutralStrokeSubtle:string
+    colorNeutralStrokeOnBrand:string
+    colorNeutralStrokeOnBrand2:string
+    colorNeutralStrokeOnBrand2Hover:string
+    colorNeutralStrokeOnBrand2Pressed:string
+    colorNeutralStrokeOnBrand2Selected:string
+    colorBrandStroke1:string
+    colorBrandStroke2:string
+    colorBrandStroke2Hover:string
+    colorBrandStroke2Pressed:string
+    colorBrandStroke2Contrast:string
+    colorCompoundBrandStroke:string
+    colorCompoundBrandStrokeHover:string
+    colorCompoundBrandStrokePressed:string
+    colorNeutralStrokeDisabled:string
+    colorNeutralStrokeInvertedDisabled:string
+    colorTransparentStroke:string
+    colorTransparentStrokeInteractive:string
+    colorTransparentStrokeDisabled:string
+    colorNeutralStrokeAlpha:string
+    colorNeutralStrokeAlpha2:string
+    colorStrokeFocus1:string
+    colorStrokeFocus2:string
+    colorNeutralShadowAmbient:string
+    colorNeutralShadowKey:string
+    colorNeutralShadowAmbientLighter:string
+    colorNeutralShadowKeyLighter:string
+    colorNeutralShadowAmbientDarker:string
+    colorNeutralShadowKeyDarker:string
+    colorBrandShadowAmbient:string
+    colorBrandShadowKey:string
+    colorPaletteRedBackground1:string
+    colorPaletteRedBackground2:string
+    colorPaletteRedBackground3:string
+    colorPaletteRedBorderActive:string
+    colorPaletteRedBorder1:string
+    colorPaletteRedBorder2:string
+    colorPaletteRedForeground1:string
+    colorPaletteRedForeground2:string
+    colorPaletteRedForeground3:string
+    colorPaletteRedForegroundInverted:string
+    colorPaletteGreenBackground1:string
+    colorPaletteGreenBackground2:string
+    colorPaletteGreenBackground3:string
+    colorPaletteGreenBorderActive:string
+    colorPaletteGreenBorder1:string
+    colorPaletteGreenBorder2:string
+    colorPaletteGreenForeground1:string
+    colorPaletteGreenForeground2:string
+    colorPaletteGreenForeground3:string
+    colorPaletteGreenForegroundInverted:string
+    colorPaletteDarkOrangeBackground1:string
+    colorPaletteDarkOrangeBackground2:string
+    colorPaletteDarkOrangeBackground3:string
+    colorPaletteDarkOrangeBorderActive:string
+    colorPaletteDarkOrangeBorder1:string
+    colorPaletteDarkOrangeBorder2:string
+    colorPaletteDarkOrangeForeground1:string
+    colorPaletteDarkOrangeForeground2:string
+    colorPaletteDarkOrangeForeground3:string
+    colorPaletteYellowBackground1:string
+    colorPaletteYellowBackground2:string
+    colorPaletteYellowBackground3:string
+    colorPaletteYellowBorderActive:string
+    colorPaletteYellowBorder1:string
+    colorPaletteYellowBorder2:string
+    colorPaletteYellowForeground1:string
+    colorPaletteYellowForeground2:string
+    colorPaletteYellowForeground3:string
+    colorPaletteYellowForegroundInverted:string
+    colorPaletteBerryBackground1:string
+    colorPaletteBerryBackground2:string
+    colorPaletteBerryBackground3:string
+    colorPaletteBerryBorderActive:string
+    colorPaletteBerryBorder1:string
+    colorPaletteBerryBorder2:string
+    colorPaletteBerryForeground1:string
+    colorPaletteBerryForeground2:string
+    colorPaletteBerryForeground3:string
+    colorPaletteMarigoldBackground1:string
+    colorPaletteMarigoldBackground2:string
+    colorPaletteMarigoldBackground3:string
+    colorPaletteMarigoldBorderActive:string
+    colorPaletteMarigoldBorder1:string
+    colorPaletteMarigoldBorder2:string
+    colorPaletteMarigoldForeground1:string
+    colorPaletteMarigoldForeground2:string
+    colorPaletteMarigoldForeground3:string
+    colorPaletteLightGreenBackground1:string
+    colorPaletteLightGreenBackground2:string
+    colorPaletteLightGreenBackground3:string
+    colorPaletteLightGreenBorderActive:string
+    colorPaletteLightGreenBorder1:string
+    colorPaletteLightGreenBorder2:string
+    colorPaletteLightGreenForeground1:string
+    colorPaletteLightGreenForeground2:string
+    colorPaletteLightGreenForeground3:string
+    colorPaletteAnchorBackground2:string
+    colorPaletteAnchorBorderActive:string
+    colorPaletteAnchorForeground2:string
+    colorPaletteBeigeBackground2:string
+    colorPaletteBeigeBorderActive:string
+    colorPaletteBeigeForeground2:string
+    colorPaletteBlueBackground2:string
+    colorPaletteBlueBorderActive:string
+    colorPaletteBlueForeground2:string
+    colorPaletteBrassBackground2:string
+    colorPaletteBrassBorderActive:string
+    colorPaletteBrassForeground2:string
+    colorPaletteBrownBackground2:string
+    colorPaletteBrownBorderActive:string
+    colorPaletteBrownForeground2:string
+    colorPaletteCornflowerBackground2:string
+    colorPaletteCornflowerBorderActive:string
+    colorPaletteCornflowerForeground2:string
+    colorPaletteCranberryBackground2:string
+    colorPaletteCranberryBorderActive:string
+    colorPaletteCranberryForeground2:string
+    colorPaletteDarkGreenBackground2:string
+    colorPaletteDarkGreenBorderActive:string
+    colorPaletteDarkGreenForeground2:string
+    colorPaletteDarkRedBackground2:string
+    colorPaletteDarkRedBorderActive:string
+    colorPaletteDarkRedForeground2:string
+    colorPaletteForestBackground2:string
+    colorPaletteForestBorderActive:string
+    colorPaletteForestForeground2:string
+    colorPaletteGoldBackground2:string
+    colorPaletteGoldBorderActive:string
+    colorPaletteGoldForeground2:string
+    colorPaletteGrapeBackground2:string
+    colorPaletteGrapeBorderActive:string
+    colorPaletteGrapeForeground2:string
+    colorPaletteLavenderBackground2:string
+    colorPaletteLavenderBorderActive:string
+    colorPaletteLavenderForeground2:string
+    colorPaletteLightTealBackground2:string
+    colorPaletteLightTealBorderActive:string
+    colorPaletteLightTealForeground2:string
+    colorPaletteLilacBackground2:string
+    colorPaletteLilacBorderActive:string
+    colorPaletteLilacForeground2:string
+    colorPaletteMagentaBackground2:string
+    colorPaletteMagentaBorderActive:string
+    colorPaletteMagentaForeground2:string
+    colorPaletteMinkBackground2:string
+    colorPaletteMinkBorderActive:string
+    colorPaletteMinkForeground2:string
+    colorPaletteNavyBackground2:string
+    colorPaletteNavyBorderActive:string
+    colorPaletteNavyForeground2:string
+    colorPalettePeachBackground2:string
+    colorPalettePeachBorderActive:string
+    colorPalettePeachForeground2:string
+    colorPalettePinkBackground2:string
+    colorPalettePinkBorderActive:string
+    colorPalettePinkForeground2:string
+    colorPalettePlatinumBackground2:string
+    colorPalettePlatinumBorderActive:string
+    colorPalettePlatinumForeground2:string
+    colorPalettePlumBackground2:string
+    colorPalettePlumBorderActive:string
+    colorPalettePlumForeground2:string
+    colorPalettePumpkinBackground2:string
+    colorPalettePumpkinBorderActive:string
+    colorPalettePumpkinForeground2:string
+    colorPalettePurpleBackground2:string
+    colorPalettePurpleBorderActive:string
+    colorPalettePurpleForeground2:string
+    colorPaletteRoyalBlueBackground2:string
+    colorPaletteRoyalBlueBorderActive:string
+    colorPaletteRoyalBlueForeground2:string
+    colorPaletteSeafoamBackground2:string
+    colorPaletteSeafoamBorderActive:string
+    colorPaletteSeafoamForeground2:string
+    colorPaletteSteelBackground2:string
+    colorPaletteSteelBorderActive:string
+    colorPaletteSteelForeground2:string
+    colorPaletteTealBackground2:string
+    colorPaletteTealBorderActive:string
+    colorPaletteTealForeground2:string
+    colorStatusSuccessBackground1:string
+    colorStatusSuccessBackground2:string
+    colorStatusSuccessBackground3:string
+    colorStatusSuccessForeground1:string
+    colorStatusSuccessForeground2:string
+    colorStatusSuccessForeground3:string
+    colorStatusSuccessForegroundInverted:string
+    colorStatusSuccessBorderActive:string
+    colorStatusSuccessBorder1:string
+    colorStatusSuccessBorder2:string
+    colorStatusWarningBackground1:string
+    colorStatusWarningBackground2:string
+    colorStatusWarningBackground3:string
+    colorStatusWarningForeground1:string
+    colorStatusWarningForeground2:string
+    colorStatusWarningForeground3:string
+    colorStatusWarningForegroundInverted:string
+    colorStatusWarningBorderActive:string
+    colorStatusWarningBorder1:string
+    colorStatusWarningBorder2:string
+    colorStatusDangerBackground1:string
+    colorStatusDangerBackground2:string
+    colorStatusDangerBackground3:string
+    colorStatusDangerForeground1:string
+    colorStatusDangerForeground2:string
+    colorStatusDangerForeground3:string
+    colorStatusDangerForegroundInverted:string
+    colorStatusDangerBorderActive:string
+    colorStatusDangerBorder1:string
+    colorStatusDangerBorder2:string
+    borderRadiusNone:string
+    borderRadiusSmall:string
+    borderRadiusMedium:string
+    borderRadiusLarge:string
+    borderRadiusXLarge:string
+    borderRadiusCircular:string
+    fontFamilyBase:string
+    fontFamilyMonospace:string
+    fontFamilyNumeric:string
+    fontSizeBase100:string
+    fontSizeBase200:string
+    fontSizeBase300:string
+    fontSizeBase400:string
+    fontSizeBase500:string
+    fontSizeBase600:string
+    fontSizeHero700:string
+    fontSizeHero800:string
+    fontSizeHero900:string
+    fontSizeHero1000:string
+    fontWeightRegular:string
+    fontWeightMedium:string
+    fontWeightSemibold:string
+    fontWeightBold:string
+    lineHeightBase100:string
+    lineHeightBase200:string
+    lineHeightBase300:string
+    lineHeightBase400:string
+    lineHeightBase500:string
+    lineHeightBase600:string
+    lineHeightHero700:string
+    lineHeightHero800:string
+    lineHeightHero900:string
+    lineHeightHero1000:string
+    shadow2:string
+    shadow4:string
+    shadow8:string
+    shadow16:string
+    shadow28:string
+    shadow64:string
+    shadow2Brand:string
+    shadow4Brand:string
+    shadow8Brand:string
+    shadow16Brand:string
+    shadow28Brand:string
+    shadow64Brand:string
+    strokeWidthThin:string
+    strokeWidthThick:string
+    strokeWidthThicker:string
+    strokeWidthThickest:string
+    spacingHorizontalNone:string
+    spacingHorizontalXXS:string
+    spacingHorizontalXS:string
+    spacingHorizontalSNudge:string
+    spacingHorizontalS:string
+    spacingHorizontalMNudge:string
+    spacingHorizontalM:string
+    spacingHorizontalL:string
+    spacingHorizontalXL:string
+    spacingHorizontalXXL:string
+    spacingHorizontalXXXL:string
+    spacingVerticalNone:string
+    spacingVerticalXXS:string
+    spacingVerticalXS:string
+    spacingVerticalSNudge:string
+    spacingVerticalS:string
+    spacingVerticalMNudge:string
+    spacingVerticalM:string
+    spacingVerticalL:string
+    spacingVerticalXL:string
+    spacingVerticalXXL:string
+    spacingVerticalXXXL:string
+    durationUltraFast:string
+    durationFaster:string
+    durationFast:string
+    durationNormal:string
+    durationGentle:string
+    durationSlow:string
+    durationSlower:string
+    durationUltraSlow:string
+    curveAccelerateMax:string
+    curveAccelerateMid:string
+    curveAccelerateMin:string
+    curveDecelerateMax:string
+    curveDecelerateMid:string
+    curveDecelerateMin:string
+    curveEasyEaseMax:string
+    curveEasyEase:string
+    curveLinear:string
+}

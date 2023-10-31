@@ -12,7 +12,7 @@ module internal Constants =
 module Themes =
     let teamsLightTheme = JS.Import<obj>("teamsLightTheme", fluentComponents)
     let teamsDarkTheme = JS.Import<obj>("teamsDarkTheme", fluentComponents)
-
+    let tokens = JS.Import<Tokens>("tokens",fluentComponents)
 [<JavaScript>]
 module Components =
     let [<Inline>] Accordion<'a> = JS.Import<'a>("Accordion",fluentComponents)
