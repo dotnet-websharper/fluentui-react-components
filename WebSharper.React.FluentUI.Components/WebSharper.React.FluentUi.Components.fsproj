@@ -5,6 +5,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Tokens.fs" />
     <Compile Include="Library.fs" />
     <Compile Include="Helpers.fs" />
     <None Include="wsconfig.json" />
