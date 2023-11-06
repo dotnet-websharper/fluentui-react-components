@@ -1,7 +1,7 @@
 ﻿namespace WebSharper.FluentUI.React
 open WebSharper.JavaScript
-open WebSharper.React
 open WebSharper
+open Styling
 [<AutoOpen; JavaScript; Sealed>]
 module internal Constants =
     let [<Literal>] fluentUi = "@fluentui"
@@ -47,7 +47,6 @@ module Components =
     let [<Inline>] Option<'a> = JS.Import<'a>("Option", fluentComponents)
     let [<Inline>] Listbox<'a> = JS.Import<'a>("Listbox", fluentComponents)
 
-    
     let [<Inline>] DataGrid<'a> = JS.Import<'a>("DataGrid", fluentComponents)
     let [<Inline>] DataGridHeader<'a> = JS.Import<'a>("DataGridHeader", fluentComponents)
     let [<Inline>] DataGridHeaderCell<'a> = JS.Import<'a>("DataGridHeaderCell", fluentComponents)
