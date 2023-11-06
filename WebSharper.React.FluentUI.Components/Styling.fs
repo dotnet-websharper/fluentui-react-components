@@ -15,7 +15,7 @@ module Styling =
  
         let webLightTheme<'a> = JS.Import<'a>("webLightTheme", "@fluentui/react-components")
 
-    type Tokens = private {
+    type Tokens = {
         colorNeutralForeground1:string
         colorNeutralForeground1Hover:string
         colorNeutralForeground1Pressed:string
