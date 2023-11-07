@@ -56,7 +56,9 @@ module Components =
     let [<Inline>] DataGridSelectionCell<'a> = JS.Import<'a>("DataGridSelectionCell", fluentComponents)
 
     let [<Inline>] Dialog<'a> = JS.Import<'a>("Dialog", fluentComponents)
-    // module [<AutoOpen>] Dialog =
+    let [<Inline>] DialogBody<'a> = JS.Import<'a>("DialogBody", fluentComponents)
+    let [<Inline>] DialogContent<'a> = JS.Import<'a>("DialogContent", fluentComponents)
+
     let [<Inline>] DialogTrigger<'a> = JS.Import<'a>("DialogTrigger", fluentComponents)
     let [<Inline>] DialogSurface<'a> = JS.Import<'a>("DialogSurface", fluentComponents)
     let [<Inline>] DialogTitle<'a> = JS.Import<'a>("DialogTitle", fluentComponents)
@@ -73,7 +75,10 @@ module Components =
     let [<Inline>] Link<'a> = JS.Import<'a>("Link", fluentComponents)
     let [<Inline>] Menu<'a> = JS.Import<'a>("Menu", fluentComponents)
     let [<Inline>] MenuList<'a> = JS.Import<'a>("MenuList", fluentComponents)
-    
+    let [<Inline>] MenuTrigger<'a> = JS.Import<'a>("MenuTrigger", fluentComponents)
+    let [<Inline>] MenuPopover<'a> = JS.Import<'a>("MenuPopover", fluentComponents)
+    let [<Inline>] MenuItem<'a> = JS.Import<'a>("MenuItem", fluentComponents)
+
     let [<Inline>] Overflow<'a> = JS.Import<'a>("Overflow", fluentComponents)
     let [<Inline>] OverflowItem<'a> = JS.Import<'a>("OverflowItem", fluentComponents)
     let [<Inline>] Persona<'a> = JS.Import<'a>("Persona", fluentComponents)

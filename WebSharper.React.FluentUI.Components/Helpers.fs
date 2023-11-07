@@ -51,6 +51,8 @@ module Helpers =
         module Dialog =
             let trigger props children = ReactHelpers.Elt DialogTrigger props children
             let surface props children = ReactHelpers.Elt DialogSurface props children
+            let content props children = ReactHelpers.Elt DialogContent props children
+            let body props children = ReactHelpers.Elt DialogBody props children
             let title props children = ReactHelpers.Elt DialogTitle props children
             let actions props children = ReactHelpers.Elt DialogActions props children
 
@@ -64,6 +66,10 @@ module Helpers =
         let link props children = ReactHelpers.Elt Link props children
         let menu props children = ReactHelpers.Elt Menu props children
         let menuList props children = ReactHelpers.Elt MenuList props children
+        module Menu =
+            let trigger props children = ReactHelpers.Elt MenuTrigger props children
+            let popover props children = ReactHelpers.Elt MenuPopover props children
+            let item props children = ReactHelpers.Elt props children
         
         let overflow props children = ReactHelpers.Elt Overflow props children
         let overflowItem props children = ReactHelpers.Elt OverflowItem props children
