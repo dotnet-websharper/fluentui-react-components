@@ -13,7 +13,7 @@
   </ItemGroup>
   <PropertyGroup>
     <NpmDependencies>
-      <NpmPackage Name="@fluentui/react-components" Version="gt 9.35.0 lt 10.0.0" ResolutionStrategy="Max" />
+      <NpmPackage Name="@fluentui/react-components" Version="gt 9.41.0 lt 10.0.0" ResolutionStrategy="Max" />
     </NpmDependencies>
   </PropertyGroup>
   <Import Project="..\paket-files\wsbuild\github.com\dotnet-websharper\build-script\WebSharper.Fake.targets" Condition="Exists('..\paket-files\wsbuild\github.com\dotnet-websharper\build-script\WebSharper.Fake.targets')" />

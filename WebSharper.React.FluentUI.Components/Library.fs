@@ -29,6 +29,10 @@ module Components =
     let [<Inline>] CounterBadge<'a> = JS.Import<'a>( "CounterBadge",fluentComponents)
     let [<Inline>] PresenceBadge<'a> = JS.Import<'a>( "PresenceBadge",fluentComponents)
 
+    let [<Inline>] Breadcrumb<'a> = JS.Import<'a>("Breadcrumb",fluentComponents)
+    let [<Inline>] BreadcrumbItem<'a> = JS.Import<'a>("BreadcrumbItem",fluentComponents)
+    let [<Inline>] BreadcrumbButton<'a> = JS.Import<'a>("BreadcrumbButton",fluentComponents)
+    let [<Inline>] BreadcrumbDivider<'a> = JS.Import<'a>("BreadcrumbDivider",fluentComponents)
     
     let [<Inline>] Button<'a> = JS.Import<'a>("Button",fluentComponents)
     let [<Inline>] CompoundButton<'a> = JS.Import<'a>("CompoundButton",fluentComponents)
@@ -40,6 +44,8 @@ module Components =
     let [<Inline>] CardHeader<'a> = JS.Import<'a>("CardFooter",fluentComponents)
     let [<Inline>] CardFooter<'a> = JS.Import<'a>("CardHeader",fluentComponents)
     let [<Inline>] CardPreview<'a> = JS.Import<'a>("CardPreview",fluentComponents)
+    
+    
 
     let [<Inline>] Checkbox<'a> = JS.Import<'a>("Checkbox", fluentComponents)
     let [<Inline>] Combobox<'a> = JS.Import<'a>("Combobox", fluentComponents)
@@ -64,12 +70,21 @@ module Components =
     let [<Inline>] DialogTitle<'a> = JS.Import<'a>("DialogTitle", fluentComponents)
     let [<Inline>] DialogActions<'a> = JS.Import<'a>("DialogActions", fluentComponents)
 
+    let [<Inline>] Drawer<'a> = JS.Import<'a>("Drawer", fluentComponents)
+    let [<Inline>] InlineDrawer<'a> = JS.Import<'a>("InlineDrawer", fluentComponents)
+    let [<Inline>] OverlayDrawer<'a> = JS.Import<'a>("OverlayDrawer", fluentComponents)
+    let [<Inline>] DrawerHeader<'a> = JS.Import<'a>("DrawerHeader", fluentComponents)
+    let [<Inline>] DrawerHeaderTitle<'a> = JS.Import<'a>("DrawerHeaderTitle", fluentComponents)
+    let [<Inline>] DrawerHeaderNavigation<'a> = JS.Import<'a>("DrawerHeaderNavigation", fluentComponents)
+    let [<Inline>] DrawerBody<'a> = JS.Import<'a>("DrawerBody", fluentComponents)
+    
     let [<Inline>] Divider<'a> = JS.Import<'a>("Divider", fluentComponents)
     let [<Inline>] Dropdown<'a> = JS.Import<'a>("Dropdown", fluentComponents)
     
     let [<Inline>] FluentProvider<'a> = JS.Import<'a>("FluentProvider", fluentComponents)
     let [<Inline>] Field<'a> = JS.Import<'a>("Field", fluentComponents)
     let [<Inline>] Image<'a> = JS.Import<'a>("Image", fluentComponents)
+    let [<Inline>] InfoLabel<'a> = JS.Import<'a>("InfoLabel", fluentComponents)
     let [<Inline>] Input<'a> = JS.Import<'a>("Input", fluentComponents)
     let [<Inline>] Label<'a> = JS.Import<'a>("Label", fluentComponents)
     let [<Inline>] Link<'a> = JS.Import<'a>("Link", fluentComponents)
@@ -79,6 +94,12 @@ module Components =
     let [<Inline>] MenuPopover<'a> = JS.Import<'a>("MenuPopover", fluentComponents)
     let [<Inline>] MenuItem<'a> = JS.Import<'a>("MenuItem", fluentComponents)
 
+    let [<Inline>] MessageBar<'a> = JS.Import<'a>("MessageBar", fluentComponents)
+    let [<Inline>] MessageBarGroup<'a> = JS.Import<'a>("MessageBarGroup", fluentComponents)
+    let [<Inline>] MessageBarBody<'a> = JS.Import<'a>("MessageBarBody", fluentComponents)
+    let [<Inline>] MessageBarTitle<'a> = JS.Import<'a>("MessageBarTitle", fluentComponents)
+    let [<Inline>] MessageBarActions<'a> = JS.Import<'a>("MessageBarActions", fluentComponents)
+    
     let [<Inline>] Overflow<'a> = JS.Import<'a>("Overflow", fluentComponents)
     let [<Inline>] OverflowItem<'a> = JS.Import<'a>("OverflowItem", fluentComponents)
     let [<Inline>] Persona<'a> = JS.Import<'a>("Persona", fluentComponents)

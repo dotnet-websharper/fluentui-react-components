@@ -19,7 +19,12 @@ module Helpers =
         let badge props = ReactHelpers.Elt Badge props []
         let counterBadge props = ReactHelpers.Elt CounterBadge props []
         let presenceBadge props = ReactHelpers.Elt PresenceBadge props []
-
+        
+        let breadcrumb props children = ReactHelpers.Elt Breadcrumb props children
+        module Breadcrumb =
+            let item props children = ReactHelpers.Elt BreadcrumbItem props children
+            let divider props children = ReactHelpers.Elt BreadcrumbDivider props children
+            let button props children = ReactHelpers.Elt BreadcrumbButton props children
         // button-related
         let button props children = ReactHelpers.Elt Button props children
         let compoundButton props children = ReactHelpers.Elt CompoundButton props children
@@ -56,11 +61,21 @@ module Helpers =
             let title props children = ReactHelpers.Elt DialogTitle props children
             let actions props children = ReactHelpers.Elt DialogActions props children
 
+        let drawer props children = ReactHelpers.Elt Drawer props children
+        let overlayDrawer props children = ReactHelpers.Elt OverlayDrawer props children
+        let inlineDrawer props children = ReactHelpers.Elt InlineDrawer props children
+        module Drawer =
+            let header props children = ReactHelpers.Elt DrawerHeader props children
+            let headerTitle props children = ReactHelpers.Elt DrawerHeaderTitle props children
+            let headerNavigation props children = ReactHelpers.Elt DrawerHeaderNavigation props children
+            let body props children = ReactHelpers.Elt DrawerBody props children
+        
         let divider props children = ReactHelpers.Elt Divider props children
         let dropdown props children = ReactHelpers.Elt Dropdown props children
         let fluentProvider props children = ReactHelpers.Elt FluentProvider props children
         let field props children = ReactHelpers.Elt Field props children
         let image props = ReactHelpers.Elt Image props []
+        let infoLabel props children = ReactHelpers.Elt InfoLabel props children
         let input props = ReactHelpers.Elt Input props []
         let label props children = ReactHelpers.Elt Label props children
         let link props children = ReactHelpers.Elt Link props children
@@ -70,6 +85,12 @@ module Helpers =
             let trigger props children = ReactHelpers.Elt MenuTrigger props children
             let popover props children = ReactHelpers.Elt MenuPopover props children
             let item props children = ReactHelpers.Elt props children
+        let messageBar props children = ReactHelpers.Elt MessageBar props children
+        module MessageBar =
+            let group props children = ReactHelpers.Elt MessageBarGroup props children
+            let body props children = ReactHelpers.Elt MessageBarBody props children
+            let title props children = ReactHelpers.Elt MessageBarTitle props children
+            let actions props children = ReactHelpers.Elt MessageBarActions props children
         
         let overflow props children = ReactHelpers.Elt Overflow props children
         let overflowItem props children = ReactHelpers.Elt OverflowItem props children
