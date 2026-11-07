@@ -15,6 +15,7 @@ tags
     Web JavaScript F# C#
 files
     ../WebSharper.React.FluentUi.Components/bin/Release/netstandard2.0/WebSharper.React.FluentUi.Components.dll ==> lib/netstandard2.0
+    ../WebSharper.React.FluentUi.Components/bin/Release/netstandard2.0/WebSharper.React.FluentUi.Components.websharper ==> lib/netstandard2.0
     ../WebSharper.React.FluentUi.Components/bin/Release/netstandard2.0/WebSharper.React.FluentUi.Components.xml ==> lib/netstandard2.0
 dependencies
         WebSharper ~> LOCKEDVERSION:[3]
