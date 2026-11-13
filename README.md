@@ -23,12 +23,15 @@ This repository contains:
 
 ![Fluent UI React components sample](docs/sample.png)
 
-The sample doubles as the binding's [test case](#running-the-test-case): it renders a Fluent
-`FluentProvider` whose theme follows the light/dark switcher, and exercises buttons, badges,
-avatars, personas, cards, fields, inputs, dropdowns, comboboxes, selects, listboxes, checkboxes,
-switches, radios, sliders, spin buttons, progress bars, spinners, skeletons, images, breadcrumbs,
-tabs, accordions, menus, toolbars, overflow, dialogs, drawers, popovers, tooltips, message bars,
-tags, interaction tags, tables, trees, flat trees and toasts.
+The sample doubles as the binding's [test case](#running-the-test-case): the page is a WebSharper.UI
+template hosting a Fluent UI React app — a **navigation drawer** (a `NavDrawer` with collapsible
+`NavCategory` groups, `NavItem`s, `NavSectionHeader`s and a `Hamburger` that collapses the rail) plus
+a showcase filtered by the selected section. The `FluentProvider` theme follows the light/dark
+switcher, and the showcase exercises buttons, badges, avatars, personas, cards, fields, inputs,
+dropdowns, comboboxes, selects, listboxes, checkboxes, switches, radios, sliders, spin buttons,
+progress bars, spinners, skeletons, images, breadcrumbs, tabs, accordions, menus, toolbars, overflow,
+dialogs, drawers, popovers, tooltips, message bars, tags, interaction tags, tables, trees, flat trees
+and toasts.
 
 - **Sample (this repository):** <https://dotnet-websharper.github.io/fluentui-react-components/>
 - **Source repository:** <https://github.com/dotnet-websharper/fluentui-react-components>
@@ -81,6 +84,29 @@ A few helpers take only the props and render no children (`badge`, `avatar`, `im
 `persona`, `progressBar`, `radio`, `slider`, `spinButton`, `spinner`, `switch`, `Toast.toaster`) —
 pass their content through a `"children"` prop.
 
+A navigation rail is a `navDrawer`; it provides the nav context, so the items go straight into its
+body:
+
+```fsharp
+F.navDrawer
+    [ prop "open" true
+      prop "type" "inline"
+      prop "separator" true
+      prop "defaultSelectedValue" "overview"
+      prop "defaultOpenCategories" (box [| "components" |]) ]
+    [ F.NavDrawer.header [] [ Html.text "Showcase" ]
+      F.NavDrawer.body [] [
+          F.navItem [ prop "value" "overview" ] [ Html.text "Overview" ]
+          F.navDivider [] []
+          F.navCategory [ prop "value" "components" ] [
+              F.navCategoryItem [] [ Html.text "Components" ]
+              F.navSubItemGroup [] [
+                  F.navSubItem [ prop "value" "buttons" ] [ Html.text "Buttons" ]
+              ]
+          ]
+      ] ]
+```
+
 ## Notes on the API
 
 - **Props are string-keyed.** The element helpers (`F.button`, `F.card`, …) take a
@@ -90,14 +116,20 @@ pass their content through a `"children"` prop.
   `F.Popover.popoverTrigger` and `F.tooltip` clone their only child, so pass exactly one element
   (for example one `F.button`), not a list of several.
 - **`F.overflow` takes one child element** that wraps the `F.overflowItem`s.
+- **Navigation.** `F.navDrawer` is the navigation root — it accepts the `Nav` selection and
+  category props (`defaultSelectedValue`, `defaultOpenCategories`, `selectedValue`,
+  `onNavItemSelect`, …) as well as the `Drawer` props (`open`, `type`, `separator`), and provides the
+  nav context, so `F.navItem` / `F.navCategory` / `F.navSubItem` can be placed directly in
+  `F.NavDrawer.body`. `F.navDivider` and `F.navSectionHeader` group the items. Use `F.nav` when you
+  want a plain (non-drawer) nav container.
 - **Theming.** Use `Themes.teamsLightTheme` / `Themes.teamsDarkTheme`, or the larger
   `Styling.Themes` surface (`webLightTheme`, `webDarkTheme`, `teamsHighContrastTheme`, …), as the
   `theme` prop of `F.fluentProvider`.
 - **Types.** Shared option/result shapes (the `*Data`/`*Options` dictionaries, controllers, and the
   `WebSharper.React.FluentUI.Types` helpers) mirror the upstream TypeScript definitions.
 - **Coverage.** The binding covers the components listed above. Newer Fluent UI surfaces — `List`,
-  `Nav`/`NavDrawer`, `SearchBox`, `Rating`, `TagPicker`, `Carousel`, `ColorPicker`, `TeachingPopover`
-  and the `DataGrid` body render-prop — are not bound yet.
+  `SearchBox`, `Rating`, `TagPicker`, `Carousel`, `ColorPicker`, `TeachingPopover` and the
+  `DataGrid` body render-prop — are not bound yet.
 - **React version.** The sample pins React 18 (`react` / `react-dom` `^18.3.1`), because the
   released `WebSharper.React` still mounts through `ReactDOM.render`, which React 19 removed.
   `@fluentui/react-components` 9.x itself supports React `>=16.14 <20`.
