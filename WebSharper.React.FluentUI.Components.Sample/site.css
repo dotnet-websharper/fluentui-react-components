@@ -1,0 +1,219 @@
+:root {
+    color-scheme: light;
+    --bg: #f3f6fb;
+    --surface: #ffffff;
+    --surface-alt: #eef2f8;
+    --border: #d9e0ea;
+    --text: #1b1f24;
+    --text-muted: #5a6472;
+    --accent: #0078d4;
+    --accent-text: #ffffff;
+    --code-bg: #eef2f8;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #14171c;
+    --surface: #1d2127;
+    --surface-alt: #23282f;
+    --border: #333a44;
+    --text: #f2f4f7;
+    --text-muted: #a5adba;
+    --accent: #479ef5;
+    --accent-text: #0b0d10;
+    --code-bg: #23282f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+a {
+    color: var(--accent);
+}
+
+code {
+    background: var(--code-bg);
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+    font-family: "Cascadia Code", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.9em;
+}
+
+.app-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.app-titles h1 {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.app-titles p {
+    margin: 0.25rem 0 0;
+    color: var(--text-muted);
+}
+
+.app-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn {
+    background: var(--accent);
+    color: var(--accent-text);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 0.45rem 0.9rem;
+    font: inherit;
+    cursor: pointer;
+}
+
+.btn:hover {
+    filter: brightness(1.05);
+}
+
+.theme-toggle {
+    background: var(--surface-alt);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.app-source {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.page {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem 4rem;
+}
+
+.notice {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin: 0 0 1.25rem;
+}
+
+.readout dl {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 0 0 1.5rem;
+}
+
+.readout dl > div {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+}
+
+.readout dt {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.readout dd {
+    margin: 0.15rem 0 0;
+    font-weight: 600;
+}
+
+.fluent-root {
+    display: block;
+}
+
+.status {
+    margin-top: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Showcase layout rendered by the Fluent UI tree. */
+.showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem 1.25rem;
+}
+
+.section-title {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.section-body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.section-error {
+    color: #b10e1e;
+    font-weight: 600;
+}
+
+.overflow-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 0.35rem 0.5rem;
+    max-width: 460px;
+}
+
+.card-preview {
+    height: 64px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent), var(--surface-alt));
+}
+
+.loading {
+    color: var(--text-muted);
+}
