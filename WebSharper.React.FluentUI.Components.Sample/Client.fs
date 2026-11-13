@@ -683,7 +683,7 @@ module Client =
     /// than calling them) scopes their hooks to the component, so they can be
     /// mounted and unmounted freely as the selection changes.
     let private fn (render: 'P -> React.Element) (props: 'P) : React.Element =
-        WebSharper.React.Helpers.Helpers.ofFunction render props []
+        ReactHelpers.OfFunction render props
 
     let App () =
         let dark, setDark = React.UseState(theme.Value = "dark")
