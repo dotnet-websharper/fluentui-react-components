@@ -69,6 +69,7 @@ code {
     margin: 0;
     font-size: 1.35rem;
     font-weight: 600;
+    overflow-wrap: anywhere;
 }
 
 .app-titles p {
@@ -209,6 +210,10 @@ code {
 @media (max-width: 760px) {
     .app-shell {
         flex-direction: column;
+    }
+    .app-shell > .app-nav {
+        position: static;
+        width: 100%;
     }
 }
 
