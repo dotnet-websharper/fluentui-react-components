@@ -41,8 +41,8 @@ module Components =
     let [<Inline>] ToggleButton<'a> = JS.Import<'a>("ToggleButton",fluentComponents)
 
     let [<Inline>] Card<'a> = JS.Import<'a>("Card",fluentComponents)
-    let [<Inline>] CardHeader<'a> = JS.Import<'a>("CardFooter",fluentComponents)
-    let [<Inline>] CardFooter<'a> = JS.Import<'a>("CardHeader",fluentComponents)
+    let [<Inline>] CardHeader<'a> = JS.Import<'a>("CardHeader",fluentComponents)
+    let [<Inline>] CardFooter<'a> = JS.Import<'a>("CardFooter",fluentComponents)
     let [<Inline>] CardPreview<'a> = JS.Import<'a>("CardPreview",fluentComponents)
     
     
