@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebSharper.FluentUI.React.Components — sample</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230078d4'/%3E%3Cpath d='M4 4h8v8H4z' fill='none' stroke='%23fff' stroke-width='1.4'/%3E%3C/svg%3E" />
+    <script>
+        // Apply a previously chosen theme before first paint. Light is the
+        // default; the key is shared with Client.fs (themeStorageKey).
+        try {
+            var t = localStorage.getItem('websharper-fluentui-theme');
+            if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+        } catch (e) { }
+    </script>
+    <link rel="stylesheet" href="site.css" />
+    <!-- FluentUI, react and react-dom are bundled from their npm packages; the WebSharper head is folded in here. -->
+    
+</head>
+<body>
+    <header class="app-header">
+        <div class="app-titles">
+            <h1>WebSharper.FluentUI.React.Components</h1>
+            <p>
+                Fluent UI React components for <a href="https://websharper.com">WebSharper</a> —
+                rendered from F# through <code>WebSharper.React</code>.
+            </p>
+        </div>
+        <div class="app-actions">
+            <button class="btn theme-toggle" ws-onclick="ToggleTheme" title="Switch between the light and dark theme">
+                <span>${themeLabel}</span>
+            </button>
+            <a class="app-source" href="https://github.com/dotnet-websharper/fluentui-react-components">Source</a>
+        </div>
+    </header>
+
+    <main class="page">
+        <p class="notice">
+            Every control below is a Fluent UI React component wrapped by the
+            <code>WebSharper.FluentUI.React.Components</code> binding. The page chrome is a WebSharper.UI
+            template; the tree below is React — a navigation drawer and the showcase, wrapped in a Fluent
+            <code>FluentProvider</code>. Pick a section in the drawer to filter the showcase.
+        </p>
+
+        <section class="readout">
+            <dl>
+                <div><dt>@fluentui/react-components</dt><dd>${fluentVersion}</dd></div>
+                <div><dt>react</dt><dd>${reactVersion}</dd></div>
+            </dl>
+        </section>
+
+        <div id="fluent-root" class="fluent-root"></div>
+
+        <p class="status" role="status">${status}</p>
+    </main>
+
+    <script type="text/javascript" src="Scripts/WebSharper.React.FluentUI.Components.Sample.min.js"></script>
+</body>
+</html>
