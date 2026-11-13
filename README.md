@@ -140,9 +140,9 @@ F.navDrawer
   `Image`); prefer the `Helpers` module, or qualify with `Microsoft.FSharp.Collections`. The
   single-argument helper functions (`badge`, `avatar`, `input`, `rating`, `searchBox`, `colorSwatch`, …)
   are the props-only ones.
-- **React version.** The sample pins React 18 (`react` / `react-dom` `^18.3.1`), because the
-  released `WebSharper.React` still mounts through `ReactDOM.render`, which React 19 removed.
-  `@fluentui/react-components` 9.x itself supports React `>=16.14 <20`.
+- **React version.** The sample uses **React 19** (`react` / `react-dom` `^19.3.1`); the
+  binding's `WebSharper.React` dependency mounts through `react-dom/client`'s `createRoot`.
+  `@fluentui/react-components` 9.x supports React `>=16.14 <20`.
 
 ## Running the test case
 
