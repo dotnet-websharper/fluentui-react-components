@@ -1,0 +1,13 @@
+{
+  "name": "websharper.fluentui.react.components.sample",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  },
+  "dependencies": {
+    "@fluentui/react-components": "^9.75.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}

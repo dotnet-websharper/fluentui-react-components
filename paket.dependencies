@@ -3,10 +3,16 @@ source https://nuget.pkg.github.com/dotnet-websharper/index.json
 source ../localnuget
 
 storage: none
-framework: netstandard2.0
+redirects: force
+framework: netstandard2.0, net10.0
 nuget WebSharper ~> 10.0
 nuget WebSharper.FSharp ~> 10.0
-nuget WebSharper.React ~> 10.0
+nuget WebSharper.UI ~> 10.0
+// Pinned: 10.1.0.720 is the build whose Mount uses react-dom/client's
+// createRoot (and which exposes ReactHelpers.OfFunction). A later build number
+// alone (10.1.1.671) still ships the old ReactDOM.render-based Mount, and paket
+// would prefer it as "newer".
+nuget WebSharper.React 10.1.0.720
 
 group wsbuild
     git https://github.com/dotnet-websharper/build-script websharper80

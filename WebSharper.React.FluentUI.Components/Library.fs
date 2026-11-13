@@ -41,8 +41,8 @@ module Components =
     let [<Inline>] ToggleButton<'a> = JS.Import<'a>("ToggleButton",fluentComponents)
 
     let [<Inline>] Card<'a> = JS.Import<'a>("Card",fluentComponents)
-    let [<Inline>] CardHeader<'a> = JS.Import<'a>("CardFooter",fluentComponents)
-    let [<Inline>] CardFooter<'a> = JS.Import<'a>("CardHeader",fluentComponents)
+    let [<Inline>] CardHeader<'a> = JS.Import<'a>("CardHeader",fluentComponents)
+    let [<Inline>] CardFooter<'a> = JS.Import<'a>("CardFooter",fluentComponents)
     let [<Inline>] CardPreview<'a> = JS.Import<'a>("CardPreview",fluentComponents)
     
     
@@ -170,3 +170,184 @@ module Components =
     let [<Inline>] FlatTree<'a> = JS.Import<'a>("FlatTree", fluentComponents)
     // module [<AutoOpen>] FlatTree =
     let [<Inline>] FlatTreeItem<'a> = JS.Import<'a>("FlatTreeItem", fluentComponents)
+
+    // Navigation
+
+    let [<Inline>] Nav<'a> = JS.Import<'a>("Nav", fluentComponents)
+    let [<Inline>] NavItem<'a> = JS.Import<'a>("NavItem", fluentComponents)
+    let [<Inline>] NavCategory<'a> = JS.Import<'a>("NavCategory", fluentComponents)
+    let [<Inline>] NavCategoryItem<'a> = JS.Import<'a>("NavCategoryItem", fluentComponents)
+    let [<Inline>] NavSubItem<'a> = JS.Import<'a>("NavSubItem", fluentComponents)
+    let [<Inline>] NavSubItemGroup<'a> = JS.Import<'a>("NavSubItemGroup", fluentComponents)
+    let [<Inline>] NavDivider<'a> = JS.Import<'a>("NavDivider", fluentComponents)
+    let [<Inline>] NavSectionHeader<'a> = JS.Import<'a>("NavSectionHeader", fluentComponents)
+    let [<Inline>] NavDrawer<'a> = JS.Import<'a>("NavDrawer", fluentComponents)
+    let [<Inline>] NavDrawerBody<'a> = JS.Import<'a>("NavDrawerBody", fluentComponents)
+    let [<Inline>] NavDrawerHeader<'a> = JS.Import<'a>("NavDrawerHeader", fluentComponents)
+    let [<Inline>] NavDrawerFooter<'a> = JS.Import<'a>("NavDrawerFooter", fluentComponents)
+    let [<Inline>] SplitNavItem<'a> = JS.Import<'a>("SplitNavItem", fluentComponents)
+    let [<Inline>] Hamburger<'a> = JS.Import<'a>("Hamburger", fluentComponents)
+    let [<Inline>] AppItem<'a> = JS.Import<'a>("AppItem", fluentComponents)
+    let [<Inline>] AppItemStatic<'a> = JS.Import<'a>("AppItemStatic", fluentComponents)
+
+    // Remaining components
+
+    // Typography presets
+    let [<Inline>] Body1<'a> = JS.Import<'a>("Body1", fluentComponents)
+    let [<Inline>] Body1Strong<'a> = JS.Import<'a>("Body1Strong", fluentComponents)
+    let [<Inline>] Body1Stronger<'a> = JS.Import<'a>("Body1Stronger", fluentComponents)
+    let [<Inline>] Body2<'a> = JS.Import<'a>("Body2", fluentComponents)
+    let [<Inline>] Caption1<'a> = JS.Import<'a>("Caption1", fluentComponents)
+    let [<Inline>] Caption1Strong<'a> = JS.Import<'a>("Caption1Strong", fluentComponents)
+    let [<Inline>] Caption1Stronger<'a> = JS.Import<'a>("Caption1Stronger", fluentComponents)
+    let [<Inline>] Caption2<'a> = JS.Import<'a>("Caption2", fluentComponents)
+    let [<Inline>] Caption2Strong<'a> = JS.Import<'a>("Caption2Strong", fluentComponents)
+    let [<Inline>] Display<'a> = JS.Import<'a>("Display", fluentComponents)
+    let [<Inline>] LargeTitle<'a> = JS.Import<'a>("LargeTitle", fluentComponents)
+    let [<Inline>] Subtitle1<'a> = JS.Import<'a>("Subtitle1", fluentComponents)
+    let [<Inline>] Subtitle2<'a> = JS.Import<'a>("Subtitle2", fluentComponents)
+    let [<Inline>] Subtitle2Stronger<'a> = JS.Import<'a>("Subtitle2Stronger", fluentComponents)
+    let [<Inline>] Title1<'a> = JS.Import<'a>("Title1", fluentComponents)
+    let [<Inline>] Title2<'a> = JS.Import<'a>("Title2", fluentComponents)
+    let [<Inline>] Title3<'a> = JS.Import<'a>("Title3", fluentComponents)
+
+    // List
+    let [<Inline>] List<'a> = JS.Import<'a>("List", fluentComponents)
+    let [<Inline>] ListItem<'a> = JS.Import<'a>("ListItem", fluentComponents)
+
+    // Menu
+    let [<Inline>] MenuDivider<'a> = JS.Import<'a>("MenuDivider", fluentComponents)
+    let [<Inline>] MenuGroup<'a> = JS.Import<'a>("MenuGroup", fluentComponents)
+    let [<Inline>] MenuGroupHeader<'a> = JS.Import<'a>("MenuGroupHeader", fluentComponents)
+    let [<Inline>] MenuItemCheckbox<'a> = JS.Import<'a>("MenuItemCheckbox", fluentComponents)
+    let [<Inline>] MenuItemLink<'a> = JS.Import<'a>("MenuItemLink", fluentComponents)
+    let [<Inline>] MenuItemRadio<'a> = JS.Import<'a>("MenuItemRadio", fluentComponents)
+    let [<Inline>] MenuItemSwitch<'a> = JS.Import<'a>("MenuItemSwitch", fluentComponents)
+    let [<Inline>] MenuSplitGroup<'a> = JS.Import<'a>("MenuSplitGroup", fluentComponents)
+
+    // Overflow
+    let [<Inline>] OverflowDivider<'a> = JS.Import<'a>("OverflowDivider", fluentComponents)
+    let [<Inline>] OverflowReorderObserver<'a> = JS.Import<'a>("OverflowReorderObserver", fluentComponents)
+
+    // Avatar
+    let [<Inline>] AvatarGroupItem<'a> = JS.Import<'a>("AvatarGroupItem", fluentComponents)
+    let [<Inline>] AvatarGroupPopover<'a> = JS.Import<'a>("AvatarGroupPopover", fluentComponents)
+    let [<Inline>] PresenceGroup<'a> = JS.Import<'a>("PresenceGroup", fluentComponents)
+
+    // Carousel
+    let [<Inline>] Carousel<'a> = JS.Import<'a>("Carousel", fluentComponents)
+    let [<Inline>] CarouselAutoplayButton<'a> = JS.Import<'a>("CarouselAutoplayButton", fluentComponents)
+    let [<Inline>] CarouselButton<'a> = JS.Import<'a>("CarouselButton", fluentComponents)
+    let [<Inline>] CarouselCard<'a> = JS.Import<'a>("CarouselCard", fluentComponents)
+    let [<Inline>] CarouselNav<'a> = JS.Import<'a>("CarouselNav", fluentComponents)
+    let [<Inline>] CarouselNavButton<'a> = JS.Import<'a>("CarouselNavButton", fluentComponents)
+    let [<Inline>] CarouselNavContainer<'a> = JS.Import<'a>("CarouselNavContainer", fluentComponents)
+    let [<Inline>] CarouselNavImageButton<'a> = JS.Import<'a>("CarouselNavImageButton", fluentComponents)
+    let [<Inline>] CarouselSlider<'a> = JS.Import<'a>("CarouselSlider", fluentComponents)
+    let [<Inline>] CarouselViewport<'a> = JS.Import<'a>("CarouselViewport", fluentComponents)
+
+    // Color picker and swatches
+    let [<Inline>] ColorArea<'a> = JS.Import<'a>("ColorArea", fluentComponents)
+    let [<Inline>] ColorPicker<'a> = JS.Import<'a>("ColorPicker", fluentComponents)
+    let [<Inline>] ColorSlider<'a> = JS.Import<'a>("ColorSlider", fluentComponents)
+    let [<Inline>] ColorSwatch<'a> = JS.Import<'a>("ColorSwatch", fluentComponents)
+    let [<Inline>] AlphaSlider<'a> = JS.Import<'a>("AlphaSlider", fluentComponents)
+    let [<Inline>] EmptySwatch<'a> = JS.Import<'a>("EmptySwatch", fluentComponents)
+    let [<Inline>] ImageSwatch<'a> = JS.Import<'a>("ImageSwatch", fluentComponents)
+    let [<Inline>] SwatchPicker<'a> = JS.Import<'a>("SwatchPicker", fluentComponents)
+    let [<Inline>] SwatchPickerRow<'a> = JS.Import<'a>("SwatchPickerRow", fluentComponents)
+
+    // Rating
+    let [<Inline>] Rating<'a> = JS.Import<'a>("Rating", fluentComponents)
+    let [<Inline>] RatingDisplay<'a> = JS.Import<'a>("RatingDisplay", fluentComponents)
+    let [<Inline>] RatingItem<'a> = JS.Import<'a>("RatingItem", fluentComponents)
+
+    // Search and tags
+    let [<Inline>] SearchBox<'a> = JS.Import<'a>("SearchBox", fluentComponents)
+    let [<Inline>] TagPicker<'a> = JS.Import<'a>("TagPicker", fluentComponents)
+    let [<Inline>] TagPickerButton<'a> = JS.Import<'a>("TagPickerButton", fluentComponents)
+    let [<Inline>] TagPickerControl<'a> = JS.Import<'a>("TagPickerControl", fluentComponents)
+    let [<Inline>] TagPickerGroup<'a> = JS.Import<'a>("TagPickerGroup", fluentComponents)
+    let [<Inline>] TagPickerInput<'a> = JS.Import<'a>("TagPickerInput", fluentComponents)
+    let [<Inline>] TagPickerList<'a> = JS.Import<'a>("TagPickerList", fluentComponents)
+    let [<Inline>] TagPickerOption<'a> = JS.Import<'a>("TagPickerOption", fluentComponents)
+    let [<Inline>] TagPickerOptionGroup<'a> = JS.Import<'a>("TagPickerOptionGroup", fluentComponents)
+    let [<Inline>] OptionGroup<'a> = JS.Import<'a>("OptionGroup", fluentComponents)
+
+    // Table extras
+    let [<Inline>] TableCellActions<'a> = JS.Import<'a>("TableCellActions", fluentComponents)
+    let [<Inline>] TableResizeHandle<'a> = JS.Import<'a>("TableResizeHandle", fluentComponents)
+
+    // Teaching popover
+    let [<Inline>] TeachingPopover<'a> = JS.Import<'a>("TeachingPopover", fluentComponents)
+    let [<Inline>] TeachingPopoverBody<'a> = JS.Import<'a>("TeachingPopoverBody", fluentComponents)
+    let [<Inline>] TeachingPopoverCarousel<'a> = JS.Import<'a>("TeachingPopoverCarousel", fluentComponents)
+    let [<Inline>] TeachingPopoverCarouselCard<'a> = JS.Import<'a>("TeachingPopoverCarouselCard", fluentComponents)
+    let [<Inline>] TeachingPopoverCarouselFooter<'a> = JS.Import<'a>("TeachingPopoverCarouselFooter", fluentComponents)
+    let [<Inline>] TeachingPopoverCarouselNav<'a> = JS.Import<'a>("TeachingPopoverCarouselNav", fluentComponents)
+    let [<Inline>] TeachingPopoverCarouselNavButton<'a> = JS.Import<'a>("TeachingPopoverCarouselNavButton", fluentComponents)
+    let [<Inline>] TeachingPopoverCarouselPageCount<'a> = JS.Import<'a>("TeachingPopoverCarouselPageCount", fluentComponents)
+    let [<Inline>] TeachingPopoverFooter<'a> = JS.Import<'a>("TeachingPopoverFooter", fluentComponents)
+    let [<Inline>] TeachingPopoverHeader<'a> = JS.Import<'a>("TeachingPopoverHeader", fluentComponents)
+    let [<Inline>] TeachingPopoverSurface<'a> = JS.Import<'a>("TeachingPopoverSurface", fluentComponents)
+    let [<Inline>] TeachingPopoverTitle<'a> = JS.Import<'a>("TeachingPopoverTitle", fluentComponents)
+    let [<Inline>] TeachingPopoverTrigger<'a> = JS.Import<'a>("TeachingPopoverTrigger", fluentComponents)
+
+    // Miscellaneous
+    let [<Inline>] AriaLiveAnnouncer<'a> = JS.Import<'a>("AriaLiveAnnouncer", fluentComponents)
+    let [<Inline>] DrawerFooter<'a> = JS.Import<'a>("DrawerFooter", fluentComponents)
+    let [<Inline>] InfoButton<'a> = JS.Import<'a>("InfoButton", fluentComponents)
+    let [<Inline>] ToastTrigger<'a> = JS.Import<'a>("ToastTrigger", fluentComponents)
+    let [<Inline>] TreeRootReset<'a> = JS.Import<'a>("TreeRootReset", fluentComponents)
+
+    // Context providers (advanced usage)
+    let [<Inline>] AccordionItemProvider<'a> = JS.Import<'a>("AccordionItemProvider", fluentComponents)
+    let [<Inline>] AccordionProvider<'a> = JS.Import<'a>("AccordionProvider", fluentComponents)
+    let [<Inline>] AnnounceProvider<'a> = JS.Import<'a>("AnnounceProvider", fluentComponents)
+    let [<Inline>] AvatarGroupProvider<'a> = JS.Import<'a>("AvatarGroupProvider", fluentComponents)
+    let [<Inline>] BreadcrumbProvider<'a> = JS.Import<'a>("BreadcrumbProvider", fluentComponents)
+    let [<Inline>] CarouselProvider<'a> = JS.Import<'a>("CarouselProvider", fluentComponents)
+    let [<Inline>] ColumnIdContextProvider<'a> = JS.Import<'a>("ColumnIdContextProvider", fluentComponents)
+    let [<Inline>] ComboboxProvider<'a> = JS.Import<'a>("ComboboxProvider", fluentComponents)
+    let [<Inline>] DataGridContextProvider<'a> = JS.Import<'a>("DataGridContextProvider", fluentComponents)
+    let [<Inline>] DialogProvider<'a> = JS.Import<'a>("DialogProvider", fluentComponents)
+    let [<Inline>] DrawerProvider<'a> = JS.Import<'a>("DrawerProvider", fluentComponents)
+    let [<Inline>] FieldContextProvider<'a> = JS.Import<'a>("FieldContextProvider", fluentComponents)
+    let [<Inline>] IdPrefixProvider<'a> = JS.Import<'a>("IdPrefixProvider", fluentComponents)
+    let [<Inline>] ListboxProvider<'a> = JS.Import<'a>("ListboxProvider", fluentComponents)
+    let [<Inline>] MenuGroupContextProvider<'a> = JS.Import<'a>("MenuGroupContextProvider", fluentComponents)
+    let [<Inline>] MenuListProvider<'a> = JS.Import<'a>("MenuListProvider", fluentComponents)
+    let [<Inline>] MenuProvider<'a> = JS.Import<'a>("MenuProvider", fluentComponents)
+    let [<Inline>] MenuTriggerContextProvider<'a> = JS.Import<'a>("MenuTriggerContextProvider", fluentComponents)
+    let [<Inline>] MessageBarContextProvider<'a> = JS.Import<'a>("MessageBarContextProvider", fluentComponents)
+    let [<Inline>] NavCategoryItemProvider<'a> = JS.Import<'a>("NavCategoryItemProvider", fluentComponents)
+    let [<Inline>] NavCategoryProvider<'a> = JS.Import<'a>("NavCategoryProvider", fluentComponents)
+    let [<Inline>] NavProvider<'a> = JS.Import<'a>("NavProvider", fluentComponents)
+    let [<Inline>] PortalMountNodeProvider<'a> = JS.Import<'a>("PortalMountNodeProvider", fluentComponents)
+    let [<Inline>] PositioningConfigurationProvider<'a> = JS.Import<'a>("PositioningConfigurationProvider", fluentComponents)
+    let [<Inline>] RadioGroupProvider<'a> = JS.Import<'a>("RadioGroupProvider", fluentComponents)
+    let [<Inline>] RatingItemProvider<'a> = JS.Import<'a>("RatingItemProvider", fluentComponents)
+    let [<Inline>] RendererProvider<'a> = JS.Import<'a>("RendererProvider", fluentComponents)
+    let [<Inline>] SSRProvider<'a> = JS.Import<'a>("SSRProvider", fluentComponents)
+    let [<Inline>] SkeletonContextProvider<'a> = JS.Import<'a>("SkeletonContextProvider", fluentComponents)
+    let [<Inline>] SwatchPickerProvider<'a> = JS.Import<'a>("SwatchPickerProvider", fluentComponents)
+    let [<Inline>] TabListProvider<'a> = JS.Import<'a>("TabListProvider", fluentComponents)
+    let [<Inline>] TableContextProvider<'a> = JS.Import<'a>("TableContextProvider", fluentComponents)
+    let [<Inline>] TableHeaderContextProvider<'a> = JS.Import<'a>("TableHeaderContextProvider", fluentComponents)
+    let [<Inline>] TableRowIdContextProvider<'a> = JS.Import<'a>("TableRowIdContextProvider", fluentComponents)
+    let [<Inline>] TreeItemProvider<'a> = JS.Import<'a>("TreeItemProvider", fluentComponents)
+    let [<Inline>] TreeProvider<'a> = JS.Import<'a>("TreeProvider", fluentComponents)
+
+/// Helper functions exported by `@fluentui/react-components`. They take and
+/// return plain objects, so they are imported untyped; the shapes live in
+/// `WebSharper.React.FluentUI.Types`.
+[<JavaScript>]
+module Utilities =
+    let partitionBreadcrumbItems = JS.Import<obj -> obj>("partitionBreadcrumbItems", fluentComponents)
+    let partitionAvatarGroupItems = JS.Import<obj -> obj>("partitionAvatarGroupItems", fluentComponents)
+
+    let createLightTheme = JS.Import<obj -> obj>("createLightTheme", fluentComponents)
+    let createDarkTheme = JS.Import<obj -> obj>("createDarkTheme", fluentComponents)
+    let createHighContrastTheme = JS.Import<obj -> obj>("createHighContrastTheme", fluentComponents)
+    let createTeamsDarkTheme = JS.Import<obj -> obj>("createTeamsDarkTheme", fluentComponents)
+    let themeToTokensObject = JS.Import<obj -> obj>("themeToTokensObject", fluentComponents)

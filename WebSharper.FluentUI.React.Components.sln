@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WebSharper.React.FluentUi.Components", "WebSharper.React.FluentUI.Components\WebSharper.React.FluentUi.Components.fsproj", "{6E10DB76-962B-4B7B-A07F-EFBEB0384B4D}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WebSharper.React.FluentUI.Components.Sample", "WebSharper.React.FluentUI.Components.Sample\WebSharper.React.FluentUI.Components.Sample.fsproj", "{4B177BE0-8083-4572-AA67-4559E729E582}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{6E10DB76-962B-4B7B-A07F-EFBEB0384B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E10DB76-962B-4B7B-A07F-EFBEB0384B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E10DB76-962B-4B7B-A07F-EFBEB0384B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B177BE0-8083-4572-AA67-4559E729E582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B177BE0-8083-4572-AA67-4559E729E582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B177BE0-8083-4572-AA67-4559E729E582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B177BE0-8083-4572-AA67-4559E729E582}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
