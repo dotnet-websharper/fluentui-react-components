@@ -285,3 +285,14 @@ code {
 .loading {
     color: var(--text-muted);
 }
+
+.carousel-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    border-radius: 8px;
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    font-weight: 600;
+}

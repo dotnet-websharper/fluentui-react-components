@@ -380,6 +380,273 @@ module Client =
             F.Toast.toaster [ prop "toasterId" "websharper-demo" ]
         ]
 
+    let private Typography () =
+        section "Typography" [
+            stack [
+                F.display [] [ Html.text "Display" ]
+                F.largeTitle [] [ Html.text "Large title" ]
+                F.title1 [] [ Html.text "Title 1" ]
+                F.title2 [] [ Html.text "Title 2" ]
+                F.title3 [] [ Html.text "Title 3" ]
+                F.subtitle1 [] [ Html.text "Subtitle 1" ]
+                F.subtitle2 [] [ Html.text "Subtitle 2" ]
+                F.subtitle2Stronger [] [ Html.text "Subtitle 2 stronger" ]
+            ]
+            stack [
+                F.body1 [] [ Html.text "Body 1 — the default body text." ]
+                F.body1Strong [] [ Html.text "Body 1 strong" ]
+                F.body1Stronger [] [ Html.text "Body 1 stronger" ]
+                F.body2 [] [ Html.text "Body 2" ]
+                F.caption1 [] [ Html.text "Caption 1" ]
+                F.caption1Strong [] [ Html.text "Caption 1 strong" ]
+                F.caption1Stronger [] [ Html.text "Caption 1 stronger" ]
+                F.caption2 [] [ Html.text "Caption 2" ]
+                F.caption2Strong [] [ Html.text "Caption 2 strong" ]
+                F.text [ prop "size" 400; prop "weight" "semibold" ] [ Html.text "Text (size 400, semibold)" ]
+                F.infoButton [ prop "info" "InfoButton opens a tooltip." ] []
+            ]
+        ]
+
+    let private Lists () =
+        section "Lists" [
+            stack [
+                F.list [ prop "aria-label" "A simple list" ] [
+                    F.listItem [] [ Html.text "The first item" ]
+                    F.listItem [] [ Html.text "The second item" ]
+                    F.listItem [] [ Html.text "The third item" ]
+                ]
+            ]
+            stack [
+                F.list [ prop "aria-label" "A selectable list"; prop "selectionMode" "multiselect" ] [
+                    F.listItem [ prop "value" "a" ] [ Html.text "Selectable A" ]
+                    F.listItem [ prop "value" "b" ] [ Html.text "Selectable B" ]
+                    F.listItem [ prop "value" "c" ] [ Html.text "Selectable C" ]
+                ]
+            ]
+        ]
+
+    let private Menus () =
+        section "Menus" [
+            F.menu [] [
+                F.Menu.trigger [ prop "disableButtonEnhancement" true ] [
+                    F.button [] [ Html.text "Grouped menu" ]
+                ]
+                F.Menu.popover [] [
+                    F.menuList [] [
+                        F.menuGroup [] [
+                            F.menuGroupHeader [] [ Html.text "Edit" ]
+                            F.Menu.item [] [ Html.text "Undo" ]
+                            F.Menu.item [] [ Html.text "Redo" ]
+                        ]
+                        F.menuDivider [] []
+                        F.menuItemCheckbox [ prop "name" "wrap"; prop "value" "wrap" ] [ Html.text "Word wrap" ]
+                        F.menuItemRadio [ prop "name" "align"; prop "value" "left" ] [ Html.text "Align left" ]
+                        F.menuItemRadio [ prop "name" "align"; prop "value" "right" ] [ Html.text "Align right" ]
+                        F.menuItemSwitch [ prop "name" "preview"; prop "value" "preview" ] [ Html.text "Live preview" ]
+                        F.menuDivider [] []
+                        F.menuItemLink [ prop "href" "https://react.fluentui.dev/" ] [ Html.text "Fluent UI docs" ]
+                        F.menuSplitGroup [] [
+                            F.Menu.item [] [ Html.text "Split item" ]
+                            F.Menu.item [] [ Html.text "More" ]
+                        ]
+                    ]
+                ]
+            ]
+            F.menuButton [ prop "disableButtonEnhancement" true ] [ Html.text "Menu button" ]
+            F.splitButton [ prop "disableButtonEnhancement" true ] [ Html.text "Split button" ]
+        ]
+
+    let private Avatars () =
+        section "Avatars and presence" [
+            F.avatarGroup [ prop "layout" "stack" ] [
+                F.avatarGroupItem [ prop "name" "Ada Lovelace" ] []
+                F.avatarGroupItem [ prop "name" "Grace Hopper" ] []
+                F.avatarGroupPopover [ prop "count" 3 ] [
+                    F.avatarGroupItem [ prop "name" "Alan Turing" ] []
+                    F.avatarGroupItem [ prop "name" "Katherine Johnson" ] []
+                ]
+            ]
+            F.presenceGroup [] [
+                F.presenceBadge [ prop "status" "available" ]
+                F.presenceBadge [ prop "status" "busy" ]
+                F.presenceBadge [ prop "status" "away" ]
+            ]
+        ]
+
+    let private RatingAndSearch () =
+        section "Rating and search" [
+            stack [
+                F.rating [ prop "defaultValue" 3; prop "max" 5 ] []
+                F.ratingDisplay [ prop "value" 4.5; prop "count" 128; prop "color" "marigold" ] []
+            ]
+            stack [
+                F.searchBox [ prop "placeholder" "Search components"; prop "defaultValue" "Fluent" ] []
+            ]
+        ]
+
+    let private TagPickers () =
+        section "Tag picker" [
+            stack [
+                F.tagPicker [] [
+                    F.tagPickerControl [] [
+                        F.tagPickerGroup [] [
+                            F.tag [ prop "dismissible" true ] [ Html.text "F#" ]
+                        ]
+                        F.tagPickerInput [
+                            prop "aria-label" "Tags"
+                            prop "placeholder" "Add a tag"
+                        ] []
+                    ]
+                    F.tagPickerList [] [
+                        F.tagPickerOption [ prop "value" "react" ] [ Html.text "React" ]
+                        F.tagPickerOption [ prop "value" "websharper" ] [ Html.text "WebSharper" ]
+                    ]
+                ]
+            ]
+            stack [
+                F.combobox [ prop "placeholder" "Grouped options" ] [
+                    F.optionGroup [ prop "label" "Languages" ] [
+                        F.option [ prop "value" "fsharp" ] [ Html.text "F#" ]
+                        F.option [ prop "value" "csharp" ] [ Html.text "C#" ]
+                    ]
+                    F.optionGroup [ prop "label" "Libraries" ] [
+                        F.option [ prop "value" "react" ] [ Html.text "React" ]
+                    ]
+                ]
+            ]
+        ]
+
+    let private Colors () =
+        let hsv = box {| h = 210.0; s = 0.85; v = 0.95; a = 1.0 |}
+        section "Color picker and swatches" [
+            stack [
+                F.swatchPicker [ prop "defaultSelectedValue" "#0078d4"; prop "layout" "row" ] [
+                    F.swatchPickerRow [] [
+                        F.colorSwatch [ prop "color" "#0078d4"; prop "value" "#0078d4" ] []
+                        F.colorSwatch [ prop "color" "#d13438"; prop "value" "#d13438" ] []
+                        F.colorSwatch [ prop "color" "#107c10"; prop "value" "#107c10" ] []
+                        F.emptySwatch [ prop "value" "#ffffff"; prop "aria-label" "Empty swatch" ] []
+                        F.imageSwatch [ prop "src" imageDataUri; prop "value" "image"; prop "aria-label" "Image swatch" ] []
+                    ]
+                ]
+            ]
+            stack [
+                F.colorPicker [ prop "color" hsv ] [
+                    F.colorArea [ prop "color" hsv ] []
+                    F.colorSlider [ prop "color" hsv; prop "channel" "hue" ] []
+                    F.alphaSlider [ prop "color" hsv ] []
+                    F.colorSwatch [ prop "color" "#0078d4"; prop "value" "preview" ] []
+                ]
+            ]
+        ]
+
+    let private Carousels () =
+        section "Carousel" [
+            F.carousel [ prop "circular" true; prop "groupSize" 1 ] [
+                F.carouselViewport [] [
+                    F.carouselSlider [] [
+                        F.carouselCard [ prop "autoSize" true ] [
+                            Html.div [ Html.attr.className "carousel-card" ] [ Html.text "Slide one" ]
+                        ]
+                        F.carouselCard [ prop "autoSize" true ] [
+                            Html.div [ Html.attr.className "carousel-card" ] [ Html.text "Slide two" ]
+                        ]
+                        F.carouselCard [ prop "autoSize" true ] [
+                            Html.div [ Html.attr.className "carousel-card" ] [ Html.text "Slide three" ]
+                        ]
+                    ]
+                ]
+                F.carouselNavContainer [ prop "layout" "inline" ] [
+                    F.carouselButton [ prop "navType" "prev" ] []
+                    F.carouselButton [ prop "navType" "next" ] []
+                ]
+            ]
+        ]
+
+    let private TeachingPopovers () =
+        section "Teaching popover" [
+            F.teachingPopover [] [
+                F.teachingPopoverTrigger [ prop "disableButtonEnhancement" true ] [
+                    F.button [] [ Html.text "Open teaching popover" ]
+                ]
+                F.teachingPopoverSurface [] [
+                    F.teachingPopoverHeader [] [
+                        F.teachingPopoverTitle [] [ Html.text "A guided step" ]
+                    ]
+                    F.teachingPopoverBody [] [
+                        Html.text "Teaching popovers walk users through a new feature."
+                    ]
+                    F.teachingPopoverFooter [ prop "initialStepText" "Start"; prop "finalStepText" "Done" ] []
+                ]
+            ]
+        ]
+
+    type private GridRow = { name: string; role: string }
+
+    type private GridColumn = {
+        renderHeaderCell: unit -> React.Element
+        renderCell: GridRow -> React.Element
+    }
+
+    type private GridRowData = { item: GridRow; rowId: string }
+
+    let private DataGrids () =
+        let rows =
+            [| { name = "Ada Lovelace"; role = "Engineer" }
+               { name = "Grace Hopper"; role = "Rear Admiral" }
+               { name = "Katherine Johnson"; role = "Mathematician" } |]
+        let columns : obj[] =
+            [| box {| columnId = "name"
+                      compare = System.Func<GridRow, GridRow, int>(fun a b -> compare a.name b.name)
+                      renderHeaderCell = (fun () -> Html.text "Name")
+                      renderCell = (fun (r: GridRow) -> Html.text r.name) |}
+               box {| columnId = "role"
+                      compare = System.Func<GridRow, GridRow, int>(fun a b -> compare a.role b.role)
+                      renderHeaderCell = (fun () -> Html.text "Role")
+                      renderCell = (fun (r: GridRow) -> Html.text r.role) |} |]
+        // The DataGrid API is render-prop based: a row's children receive the
+        // column definition, and the body's children receive the row data.
+        let headerCell (column: GridColumn) =
+            F.DataGrid.headerCell [] [ column.renderHeaderCell () ]
+        let bodyRow (row: GridRowData) =
+            F.DataGrid.row [
+                prop "children" (fun (column: GridColumn) ->
+                    F.DataGrid.cell [] [ column.renderCell row.item ])
+            ] []
+        section "Data grid" [
+            F.dataGrid [
+                prop "items" rows
+                prop "columns" columns
+                prop "getRowId" (fun (r: GridRow) -> r.name)
+                prop "focusMode" "composite"
+            ] [
+                F.DataGrid.header [] [
+                    F.DataGrid.row [ prop "children" headerCell ] []
+                ]
+                F.DataGrid.body [ prop "children" bodyRow ] []
+            ]
+        ]
+
+    let private Misc () =
+        section "Miscellaneous" [
+            F.ariaLiveAnnouncer [] []
+            F.table [ prop "aria-label" "A table with actions" ] [
+                F.Table.header [] [
+                    F.Table.row [] [ F.Table.headerCell [] [ Html.text "Name" ] ]
+                ]
+                F.Table.body [] [
+                    F.Table.row [] [
+                        F.Table.cell [] [
+                            F.Table.cellLayout [] [ Html.text "Ada Lovelace" ]
+                            F.tableCellActions [] [
+                                F.button [ prop "appearance" "subtle" ] [ Html.text "Edit" ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+
     // ------------------------------------------------------------------
     // The React tree
     // ------------------------------------------------------------------
@@ -390,11 +657,22 @@ module Client =
           "badges", "Badges, avatars and personas", Badges
           "cards", "Cards", Cards
           "inputs", "Inputs and selection", Inputs
-          "navigation", "Navigation", Navigation
-          "surfaces", "Dialogs, drawers and popups", Surfaces
-          "status", "Message bars and tags", Status
+          "typography", "Typography", Typography
+          "lists", "Lists", Lists
+          "menus", "Menus", Menus
+          "avatars", "Avatars and presence", Avatars
           "data", "Tables and trees", Data
-          "toasts", "Toasts", Toasts ]
+          "datagrid", "Data grid", DataGrids
+          "carousel", "Carousel", Carousels
+          "rating", "Rating and search", RatingAndSearch
+          "tagpicker", "Tag picker", TagPickers
+          "colors", "Color picker and swatches", Colors
+          "surfaces", "Dialogs, drawers and popups", Surfaces
+          "teaching", "Teaching popover", TeachingPopovers
+          "status", "Message bars and tags", Status
+          "toasts", "Toasts", Toasts
+          "misc", "Miscellaneous", Misc
+          "navigation", "Navigation", Navigation ]
 
     let private sectionTitle (key: string) =
         match sections |> List.tryFind (fun (k, _, _) -> k = key) with
@@ -449,7 +727,7 @@ module Client =
                     prop "className" "app-nav"
                     prop "aria-label" "Showcase sections"
                     prop "defaultSelectedValue" "overview"
-                    prop "defaultOpenCategories" (box [| "components"; "patterns" |])
+                    prop "defaultOpenCategories" (box [| "components"; "data"; "overlays"; "navigation" |])
                 ] [
                     F.NavDrawer.header [] [
                         Html.div [ Html.attr.className "nav-brand" ] [
@@ -464,13 +742,28 @@ module Client =
                             subNavItem "badges" "Badges, avatars and personas"
                             subNavItem "cards" "Cards"
                             subNavItem "inputs" "Inputs and selection"
+                            subNavItem "typography" "Typography"
+                            subNavItem "lists" "Lists"
+                            subNavItem "menus" "Menus"
+                            subNavItem "avatars" "Avatars and presence"
                         ]
-                        category "patterns" "Patterns" [
-                            subNavItem "navigation" "Navigation"
-                            subNavItem "surfaces" "Dialogs, drawers and popups"
-                            subNavItem "status" "Message bars and tags"
+                        category "data" "Data display" [
                             subNavItem "data" "Tables and trees"
+                            subNavItem "datagrid" "Data grid"
+                            subNavItem "carousel" "Carousel"
+                            subNavItem "rating" "Rating and search"
+                            subNavItem "tagpicker" "Tag picker"
+                            subNavItem "colors" "Color picker and swatches"
+                        ]
+                        category "overlays" "Overlays and feedback" [
+                            subNavItem "surfaces" "Dialogs, drawers and popups"
+                            subNavItem "teaching" "Teaching popover"
+                            subNavItem "status" "Message bars and tags"
                             subNavItem "toasts" "Toasts"
+                            subNavItem "misc" "Miscellaneous"
+                        ]
+                        category "navigation" "Navigation" [
+                            subNavItem "navigation" "Navigation"
                         ]
                         F.navDivider [] []
                         F.navSectionHeader [] [ Html.text "Resources" ]
