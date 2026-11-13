@@ -14,7 +14,7 @@ This repository contains:
 
 | Project | Purpose |
 | --- | --- |
-| `WebSharper.React.FluentUI.Components` | The binding: the Fluent UI component imports (`Components`), the element helpers (`Helpers`), the `Styling`/`Themes` surface and the shared option/result types (`WebSharper.React.FluentUI.Types`). |
+| `WebSharper.React.FluentUI.Components` | The binding: every component exported by `@fluentui/react-components` plus its context providers (`Components`), the element helpers (`Helpers`), the theming surface (`Styling`, `Themes`), the exported helper functions (`Utilities`) and the shared option/result types (`WebSharper.React.FluentUI.Types`). |
 | `WebSharper.React.FluentUI.Components.Sample` | A static SPA that renders a Fluent UI showcase from F#: a WebSharper.UI template as the page chrome, hosting a Fluent `FluentProvider` tree built with the binding. |
 
 ## Live demos
@@ -25,13 +25,12 @@ This repository contains:
 
 The sample doubles as the binding's [test case](#running-the-test-case): the page is a WebSharper.UI
 template hosting a Fluent UI React app — a **navigation drawer** (a `NavDrawer` with collapsible
-`NavCategory` groups, `NavItem`s, `NavSectionHeader`s and a `Hamburger` that collapses the rail) plus
-a showcase filtered by the selected section. The `FluentProvider` theme follows the light/dark
-switcher, and the showcase exercises buttons, badges, avatars, personas, cards, fields, inputs,
-dropdowns, comboboxes, selects, listboxes, checkboxes, switches, radios, sliders, spin buttons,
-progress bars, spinners, skeletons, images, breadcrumbs, tabs, accordions, menus, toolbars, overflow,
-dialogs, drawers, popovers, tooltips, message bars, tags, interaction tags, tables, trees, flat trees
-and toasts.
+`NavCategory` groups, `NavItem`s, `NavSectionHeader`s and a `Hamburger` that collapses the rail) whose
+selection filters a showcase of twenty sections. The `FluentProvider` theme follows the light/dark
+switcher, and the sections cover buttons, badges/avatars/personas, cards, inputs and selection,
+typography, lists, menus, avatars and presence, tables and trees, the data grid, the carousel, rating
+and search, the tag picker, the color picker and swatches, dialogs/drawers/popups, the teaching
+popover, message bars and tags, toasts, miscellaneous controls and navigation.
 
 - **Sample (this repository):** <https://dotnet-websharper.github.io/fluentui-react-components/>
 - **Source repository:** <https://github.com/dotnet-websharper/fluentui-react-components>
@@ -80,9 +79,9 @@ module Demo =
               F.field [ prop "label" "Name" ] [ F.input [ prop "placeholder" "Type your name" ] ] ]
 ```
 
-A few helpers take only the props and render no children (`badge`, `avatar`, `image`, `input`,
-`persona`, `progressBar`, `radio`, `slider`, `spinButton`, `spinner`, `switch`, `Toast.toaster`) —
-pass their content through a `"children"` prop.
+A few helpers take only the props and render no children (`badge`, `avatar`, `hamburger`, `image`,
+`input`, `persona`, `progressBar`, `radio`, `slider`, `spinButton`, `spinner`, `switch`,
+`Toast.toaster`) — pass their content through a `"children"` prop.
 
 A navigation rail is a `navDrawer`; it provides the nav context, so the items go straight into its
 body:
@@ -127,9 +126,20 @@ F.navDrawer
   `theme` prop of `F.fluentProvider`.
 - **Types.** Shared option/result shapes (the `*Data`/`*Options` dictionaries, controllers, and the
   `WebSharper.React.FluentUI.Types` helpers) mirror the upstream TypeScript definitions.
-- **Coverage.** The binding covers the components listed above. Newer Fluent UI surfaces — `List`,
-  `SearchBox`, `Rating`, `TagPicker`, `Carousel`, `ColorPicker`, `TeachingPopover` and the
-  `DataGrid` body render-prop — are not bound yet.
+- **Coverage.** The binding covers **every component** exported by
+  `@fluentui/react-components` — the full set, from `Accordion` to `TreeRootReset`, plus the
+  context providers (`FluentProvider`, `AccordionProvider`, `RendererProvider`, …) and the exported
+  theme/helper functions (`Themes`, `Styling`, and `Utilities`' `createLightTheme`, `partitionBreadcrumbItems`, …).
+  Each component also has an element helper in `Helpers` that takes `props children`.
+- **Render-prop APIs.** `DataGrid` (its `DataGridRow` and `DataGridBody` children), `CarouselNav` and
+  `TeachingPopoverCarouselNav` take **functions** as children. Pass them through the `"children"`
+  prop with no positional children, e.g.
+  `F.DataGrid.body [ prop "children" (fun row -> …) ] []`. When the positional children are empty,
+  `Helpers` emits a two-argument `createElement`, so `props.children` is used as-is.
+- **Shadowing.** `Components` exposes some names that clash with F# ones (`Option`, `Text`, `List`,
+  `Image`); prefer the `Helpers` module, or qualify with `Microsoft.FSharp.Collections`. The
+  single-argument helper functions (`badge`, `avatar`, `input`, `rating`, `searchBox`, `colorSwatch`, …)
+  are the props-only ones.
 - **React version.** The sample pins React 18 (`react` / `react-dom` `^18.3.1`), because the
   released `WebSharper.React` still mounts through `ReactDOM.render`, which React 19 removed.
   `@fluentui/react-components` 9.x itself supports React `>=16.14 <20`.

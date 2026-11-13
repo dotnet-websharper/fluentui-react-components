@@ -179,3 +179,150 @@ module Helpers =
         let hamburger props = ReactHelpers.Elt Hamburger props []
         let appItem props children = ReactHelpers.Elt AppItem props children
         let appItemStatic props children = ReactHelpers.Elt AppItemStatic props children
+        // remaining components
+
+        // Typography presets
+        let body1 props children = ReactHelpers.Elt Body1 props children
+        let body1Strong props children = ReactHelpers.Elt Body1Strong props children
+        let body1Stronger props children = ReactHelpers.Elt Body1Stronger props children
+        let body2 props children = ReactHelpers.Elt Body2 props children
+        let caption1 props children = ReactHelpers.Elt Caption1 props children
+        let caption1Strong props children = ReactHelpers.Elt Caption1Strong props children
+        let caption1Stronger props children = ReactHelpers.Elt Caption1Stronger props children
+        let caption2 props children = ReactHelpers.Elt Caption2 props children
+        let caption2Strong props children = ReactHelpers.Elt Caption2Strong props children
+        let display props children = ReactHelpers.Elt Display props children
+        let largeTitle props children = ReactHelpers.Elt LargeTitle props children
+        let subtitle1 props children = ReactHelpers.Elt Subtitle1 props children
+        let subtitle2 props children = ReactHelpers.Elt Subtitle2 props children
+        let subtitle2Stronger props children = ReactHelpers.Elt Subtitle2Stronger props children
+        let title1 props children = ReactHelpers.Elt Title1 props children
+        let title2 props children = ReactHelpers.Elt Title2 props children
+        let title3 props children = ReactHelpers.Elt Title3 props children
+
+        // List
+        let list props children = ReactHelpers.Elt List props children
+        let listItem props children = ReactHelpers.Elt ListItem props children
+
+        // Menu
+        let menuDivider props children = ReactHelpers.Elt MenuDivider props children
+        let menuGroup props children = ReactHelpers.Elt MenuGroup props children
+        let menuGroupHeader props children = ReactHelpers.Elt MenuGroupHeader props children
+        let menuItemCheckbox props children = ReactHelpers.Elt MenuItemCheckbox props children
+        let menuItemLink props children = ReactHelpers.Elt MenuItemLink props children
+        let menuItemRadio props children = ReactHelpers.Elt MenuItemRadio props children
+        let menuItemSwitch props children = ReactHelpers.Elt MenuItemSwitch props children
+        let menuSplitGroup props children = ReactHelpers.Elt MenuSplitGroup props children
+
+        // Overflow
+        let overflowDivider props children = ReactHelpers.Elt OverflowDivider props children
+        let overflowReorderObserver props children = ReactHelpers.Elt OverflowReorderObserver props children
+
+        // Avatar
+        let avatarGroupItem props children = ReactHelpers.Elt AvatarGroupItem props children
+        let avatarGroupPopover props children = ReactHelpers.Elt AvatarGroupPopover props children
+        let presenceGroup props children = ReactHelpers.Elt PresenceGroup props children
+
+        // Carousel
+        let carousel props children = ReactHelpers.Elt Carousel props children
+        let carouselAutoplayButton props children = ReactHelpers.Elt CarouselAutoplayButton props children
+        let carouselButton props children = ReactHelpers.Elt CarouselButton props children
+        let carouselCard props children = ReactHelpers.Elt CarouselCard props children
+        let carouselNav props children = ReactHelpers.Elt CarouselNav props children
+        let carouselNavButton props children = ReactHelpers.Elt CarouselNavButton props children
+        let carouselNavContainer props children = ReactHelpers.Elt CarouselNavContainer props children
+        let carouselNavImageButton props children = ReactHelpers.Elt CarouselNavImageButton props children
+        let carouselSlider props children = ReactHelpers.Elt CarouselSlider props children
+        let carouselViewport props children = ReactHelpers.Elt CarouselViewport props children
+
+        // Color picker and swatches
+        let colorArea props children = ReactHelpers.Elt ColorArea props children
+        let colorPicker props children = ReactHelpers.Elt ColorPicker props children
+        let colorSlider props children = ReactHelpers.Elt ColorSlider props children
+        let colorSwatch props children = ReactHelpers.Elt ColorSwatch props children
+        let alphaSlider props children = ReactHelpers.Elt AlphaSlider props children
+        let emptySwatch props children = ReactHelpers.Elt EmptySwatch props children
+        let imageSwatch props children = ReactHelpers.Elt ImageSwatch props children
+        let swatchPicker props children = ReactHelpers.Elt SwatchPicker props children
+        let swatchPickerRow props children = ReactHelpers.Elt SwatchPickerRow props children
+
+        // Rating
+        let rating props children = ReactHelpers.Elt Rating props children
+        let ratingDisplay props children = ReactHelpers.Elt RatingDisplay props children
+        let ratingItem props children = ReactHelpers.Elt RatingItem props children
+
+        // Search and tags
+        let searchBox props children = ReactHelpers.Elt SearchBox props children
+        let tagPicker props children = ReactHelpers.Elt TagPicker props children
+        let tagPickerButton props children = ReactHelpers.Elt TagPickerButton props children
+        let tagPickerControl props children = ReactHelpers.Elt TagPickerControl props children
+        let tagPickerGroup props children = ReactHelpers.Elt TagPickerGroup props children
+        let tagPickerInput props children = ReactHelpers.Elt TagPickerInput props children
+        let tagPickerList props children = ReactHelpers.Elt TagPickerList props children
+        let tagPickerOption props children = ReactHelpers.Elt TagPickerOption props children
+        let tagPickerOptionGroup props children = ReactHelpers.Elt TagPickerOptionGroup props children
+        let optionGroup props children = ReactHelpers.Elt OptionGroup props children
+
+        // Table extras
+        let tableCellActions props children = ReactHelpers.Elt TableCellActions props children
+        let tableResizeHandle props children = ReactHelpers.Elt TableResizeHandle props children
+
+        // Teaching popover
+        let teachingPopover props children = ReactHelpers.Elt TeachingPopover props children
+        let teachingPopoverBody props children = ReactHelpers.Elt TeachingPopoverBody props children
+        let teachingPopoverCarousel props children = ReactHelpers.Elt TeachingPopoverCarousel props children
+        let teachingPopoverCarouselCard props children = ReactHelpers.Elt TeachingPopoverCarouselCard props children
+        let teachingPopoverCarouselFooter props children = ReactHelpers.Elt TeachingPopoverCarouselFooter props children
+        let teachingPopoverCarouselNav props children = ReactHelpers.Elt TeachingPopoverCarouselNav props children
+        let teachingPopoverCarouselNavButton props children = ReactHelpers.Elt TeachingPopoverCarouselNavButton props children
+        let teachingPopoverCarouselPageCount props children = ReactHelpers.Elt TeachingPopoverCarouselPageCount props children
+        let teachingPopoverFooter props children = ReactHelpers.Elt TeachingPopoverFooter props children
+        let teachingPopoverHeader props children = ReactHelpers.Elt TeachingPopoverHeader props children
+        let teachingPopoverSurface props children = ReactHelpers.Elt TeachingPopoverSurface props children
+        let teachingPopoverTitle props children = ReactHelpers.Elt TeachingPopoverTitle props children
+        let teachingPopoverTrigger props children = ReactHelpers.Elt TeachingPopoverTrigger props children
+
+        // Miscellaneous
+        let ariaLiveAnnouncer props children = ReactHelpers.Elt AriaLiveAnnouncer props children
+        let drawerFooter props children = ReactHelpers.Elt DrawerFooter props children
+        let infoButton props children = ReactHelpers.Elt InfoButton props children
+        let toastTrigger props children = ReactHelpers.Elt ToastTrigger props children
+        let treeRootReset props children = ReactHelpers.Elt TreeRootReset props children
+
+        // context providers (advanced usage)
+        let accordionItemProvider props children = ReactHelpers.Elt AccordionItemProvider props children
+        let accordionProvider props children = ReactHelpers.Elt AccordionProvider props children
+        let announceProvider props children = ReactHelpers.Elt AnnounceProvider props children
+        let avatarGroupProvider props children = ReactHelpers.Elt AvatarGroupProvider props children
+        let breadcrumbProvider props children = ReactHelpers.Elt BreadcrumbProvider props children
+        let carouselProvider props children = ReactHelpers.Elt CarouselProvider props children
+        let columnIdContextProvider props children = ReactHelpers.Elt ColumnIdContextProvider props children
+        let comboboxProvider props children = ReactHelpers.Elt ComboboxProvider props children
+        let dataGridContextProvider props children = ReactHelpers.Elt DataGridContextProvider props children
+        let dialogProvider props children = ReactHelpers.Elt DialogProvider props children
+        let drawerProvider props children = ReactHelpers.Elt DrawerProvider props children
+        let fieldContextProvider props children = ReactHelpers.Elt FieldContextProvider props children
+        let idPrefixProvider props children = ReactHelpers.Elt IdPrefixProvider props children
+        let listboxProvider props children = ReactHelpers.Elt ListboxProvider props children
+        let menuGroupContextProvider props children = ReactHelpers.Elt MenuGroupContextProvider props children
+        let menuListProvider props children = ReactHelpers.Elt MenuListProvider props children
+        let menuProvider props children = ReactHelpers.Elt MenuProvider props children
+        let menuTriggerContextProvider props children = ReactHelpers.Elt MenuTriggerContextProvider props children
+        let messageBarContextProvider props children = ReactHelpers.Elt MessageBarContextProvider props children
+        let navCategoryItemProvider props children = ReactHelpers.Elt NavCategoryItemProvider props children
+        let navCategoryProvider props children = ReactHelpers.Elt NavCategoryProvider props children
+        let navProvider props children = ReactHelpers.Elt NavProvider props children
+        let portalMountNodeProvider props children = ReactHelpers.Elt PortalMountNodeProvider props children
+        let positioningConfigurationProvider props children = ReactHelpers.Elt PositioningConfigurationProvider props children
+        let radioGroupProvider props children = ReactHelpers.Elt RadioGroupProvider props children
+        let ratingItemProvider props children = ReactHelpers.Elt RatingItemProvider props children
+        let rendererProvider props children = ReactHelpers.Elt RendererProvider props children
+        let ssrProvider props children = ReactHelpers.Elt SSRProvider props children
+        let skeletonContextProvider props children = ReactHelpers.Elt SkeletonContextProvider props children
+        let swatchPickerProvider props children = ReactHelpers.Elt SwatchPickerProvider props children
+        let tabListProvider props children = ReactHelpers.Elt TabListProvider props children
+        let tableContextProvider props children = ReactHelpers.Elt TableContextProvider props children
+        let tableHeaderContextProvider props children = ReactHelpers.Elt TableHeaderContextProvider props children
+        let tableRowIdContextProvider props children = ReactHelpers.Elt TableRowIdContextProvider props children
+        let treeItemProvider props children = ReactHelpers.Elt TreeItemProvider props children
+        let treeProvider props children = ReactHelpers.Elt TreeProvider props children
