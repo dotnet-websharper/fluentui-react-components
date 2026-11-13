@@ -170,3 +170,22 @@ module Components =
     let [<Inline>] FlatTree<'a> = JS.Import<'a>("FlatTree", fluentComponents)
     // module [<AutoOpen>] FlatTree =
     let [<Inline>] FlatTreeItem<'a> = JS.Import<'a>("FlatTreeItem", fluentComponents)
+
+    // Navigation
+
+    let [<Inline>] Nav<'a> = JS.Import<'a>("Nav", fluentComponents)
+    let [<Inline>] NavItem<'a> = JS.Import<'a>("NavItem", fluentComponents)
+    let [<Inline>] NavCategory<'a> = JS.Import<'a>("NavCategory", fluentComponents)
+    let [<Inline>] NavCategoryItem<'a> = JS.Import<'a>("NavCategoryItem", fluentComponents)
+    let [<Inline>] NavSubItem<'a> = JS.Import<'a>("NavSubItem", fluentComponents)
+    let [<Inline>] NavSubItemGroup<'a> = JS.Import<'a>("NavSubItemGroup", fluentComponents)
+    let [<Inline>] NavDivider<'a> = JS.Import<'a>("NavDivider", fluentComponents)
+    let [<Inline>] NavSectionHeader<'a> = JS.Import<'a>("NavSectionHeader", fluentComponents)
+    let [<Inline>] NavDrawer<'a> = JS.Import<'a>("NavDrawer", fluentComponents)
+    let [<Inline>] NavDrawerBody<'a> = JS.Import<'a>("NavDrawerBody", fluentComponents)
+    let [<Inline>] NavDrawerHeader<'a> = JS.Import<'a>("NavDrawerHeader", fluentComponents)
+    let [<Inline>] NavDrawerFooter<'a> = JS.Import<'a>("NavDrawerFooter", fluentComponents)
+    let [<Inline>] SplitNavItem<'a> = JS.Import<'a>("SplitNavItem", fluentComponents)
+    let [<Inline>] Hamburger<'a> = JS.Import<'a>("Hamburger", fluentComponents)
+    let [<Inline>] AppItem<'a> = JS.Import<'a>("AppItem", fluentComponents)
+    let [<Inline>] AppItemStatic<'a> = JS.Import<'a>("AppItemStatic", fluentComponents)

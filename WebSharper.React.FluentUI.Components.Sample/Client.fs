@@ -384,24 +384,127 @@ module Client =
     // The React tree
     // ------------------------------------------------------------------
 
+    /// The showcase sections, in navigation order.
+    let private sections : (string * string * (unit -> React.Element)) list =
+        [ "buttons", "Buttons", Buttons
+          "badges", "Badges, avatars and personas", Badges
+          "cards", "Cards", Cards
+          "inputs", "Inputs and selection", Inputs
+          "navigation", "Navigation", Navigation
+          "surfaces", "Dialogs, drawers and popups", Surfaces
+          "status", "Message bars and tags", Status
+          "data", "Tables and trees", Data
+          "toasts", "Toasts", Toasts ]
+
+    let private sectionTitle (key: string) =
+        match sections |> List.tryFind (fun (k, _, _) -> k = key) with
+        | Some (_, title, _) -> title
+        | None -> "Overview"
+
+    /// Instantiate a function component. Rendering the sections this way (rather
+    /// than calling them) scopes their hooks to the component, so they can be
+    /// mounted and unmounted freely as the selection changes.
+    let private fn (render: 'P -> React.Element) (props: 'P) : React.Element =
+        WebSharper.React.Helpers.Helpers.ofFunction render props []
+
     let App () =
         let dark, setDark = React.UseState(theme.Value = "dark")
         React.UseEffect((fun () -> setFluentDark <- Some (fun d -> setDark.Invoke d)), [||]) |> ignore
 
+        let selected, setSelected = React.UseState "overview"
+        let navOpen, setNavOpen = React.UseState true
+
         let fluentTheme =
             if dark then Themes.teamsDarkTheme else Themes.teamsLightTheme
 
+        let navItem value label =
+            F.navItem [
+                prop "value" value
+                Html.on.click (fun _ -> setSelected.Invoke value)
+            ] [ Html.text label ]
+
+        let subNavItem value label =
+            F.navSubItem [
+                prop "value" value
+                Html.on.click (fun _ -> setSelected.Invoke value)
+            ] [ Html.text label ]
+
+        let category value label items =
+            F.navCategory [ prop "value" value ] [
+                F.navCategoryItem [] [ Html.text label ]
+                F.navSubItemGroup [] items
+            ]
+
+        let visibleSections =
+            if selected = "overview" then sections
+            else sections |> List.filter (fun (k, _, _) -> k = selected)
+
         F.fluentProvider [ prop "theme" fluentTheme ] [
-            Html.div [ Html.attr.className "showcase" ] [
-                guard "Buttons" (Buttons ())
-                guard "Badges" (Badges ())
-                guard "Cards" (Cards ())
-                guard "Inputs" (Inputs ())
-                guard "Navigation" (Navigation ())
-                guard "Surfaces" (Surfaces ())
-                guard "Status" (Status ())
-                guard "Data" (Data ())
-                guard "Toasts" (Toasts ())
+            Html.div [ Html.attr.className "app-shell" ] [
+
+                F.navDrawer [
+                    prop "type" "inline"
+                    prop "open" navOpen
+                    prop "separator" true
+                    prop "className" "app-nav"
+                    prop "aria-label" "Showcase sections"
+                    prop "defaultSelectedValue" "overview"
+                    prop "defaultOpenCategories" (box [| "components"; "patterns" |])
+                ] [
+                    F.NavDrawer.header [] [
+                        Html.div [ Html.attr.className "nav-brand" ] [
+                            Html.text "Fluent UI Showcase"
+                        ]
+                    ]
+                    F.NavDrawer.body [ prop "className" "app-nav-body" ] [
+                        navItem "overview" "Overview"
+                        F.navDivider [] []
+                        category "components" "Components" [
+                            subNavItem "buttons" "Buttons"
+                            subNavItem "badges" "Badges, avatars and personas"
+                            subNavItem "cards" "Cards"
+                            subNavItem "inputs" "Inputs and selection"
+                        ]
+                        category "patterns" "Patterns" [
+                            subNavItem "navigation" "Navigation"
+                            subNavItem "surfaces" "Dialogs, drawers and popups"
+                            subNavItem "status" "Message bars and tags"
+                            subNavItem "data" "Tables and trees"
+                            subNavItem "toasts" "Toasts"
+                        ]
+                        F.navDivider [] []
+                        F.navSectionHeader [] [ Html.text "Resources" ]
+                        F.navItem [
+                            prop "value" "docs"
+                            prop "href" "https://react.fluentui.dev/"
+                        ] [ Html.text "Fluent UI docs" ]
+                        F.navItem [
+                            prop "value" "source"
+                            prop "href" "https://github.com/dotnet-websharper/fluentui-react-components"
+                        ] [ Html.text "Source" ]
+                    ]
+                    F.NavDrawer.footer [] [
+                        Html.div [ Html.attr.className "nav-footer" ] [
+                            Html.text ("@fluentui/react-components " + fluentVersion)
+                        ]
+                    ]
+                ]
+
+                Html.div [ Html.attr.className "app-main" ] [
+                    Html.div [ Html.attr.className "app-toolbar" ] [
+                        F.hamburger [
+                            prop "aria-label" "Toggle navigation"
+                            Html.on.click (fun _ -> setNavOpen.Invoke (not navOpen))
+                        ]
+                        Html.h2 [ Html.attr.className "app-title" ] [
+                            Html.text (sectionTitle selected)
+                        ]
+                    ]
+                    Html.div [ Html.attr.className "showcase" ] [
+                        for (_, title, render) in visibleSections ->
+                            guard title (fn render ())
+                    ]
+                ]
             ]
         ]
 

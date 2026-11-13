@@ -160,3 +160,22 @@ module Helpers =
         let flatTree props children = ReactHelpers.Elt FlatTree props children
         module FlatTree =
             let item props children = ReactHelpers.Elt FlatTreeItem props children
+
+        // navigation
+        let nav props children = ReactHelpers.Elt Nav props children
+        let navItem props children = ReactHelpers.Elt NavItem props children
+        let navCategory props children = ReactHelpers.Elt NavCategory props children
+        let navCategoryItem props children = ReactHelpers.Elt NavCategoryItem props children
+        let navSubItem props children = ReactHelpers.Elt NavSubItem props children
+        let navSubItemGroup props children = ReactHelpers.Elt NavSubItemGroup props children
+        let navDivider props children = ReactHelpers.Elt NavDivider props children
+        let navSectionHeader props children = ReactHelpers.Elt NavSectionHeader props children
+        let navDrawer props children = ReactHelpers.Elt NavDrawer props children
+        module NavDrawer =
+            let body props children = ReactHelpers.Elt NavDrawerBody props children
+            let header props children = ReactHelpers.Elt NavDrawerHeader props children
+            let footer props children = ReactHelpers.Elt NavDrawerFooter props children
+        let splitNavItem props children = ReactHelpers.Elt SplitNavItem props children
+        let hamburger props = ReactHelpers.Elt Hamburger props []
+        let appItem props children = ReactHelpers.Elt AppItem props children
+        let appItemStatic props children = ReactHelpers.Elt AppItemStatic props children
